@@ -1,0 +1,32 @@
+{
+ "content": null,
+ "creation": "2026-05-09 12:13:13.656815",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2026-05-09 12:14:36.005570",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "sales-order-financia",
+ "owner": "Administrator",
+ "page_name": "sales-order-financia",
+ "roles": [
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Sales Back Office"
+  },
+  {
+   "role": "Dealership Manager"
+  },
+  {
+   "role": "Super Admin"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Sales Order Financial Overview"
+}

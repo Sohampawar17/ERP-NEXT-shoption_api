@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:transactionid",
+ "creation": "2026-01-22 14:20:33.377785",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_6gzb",
+  "order_id",
+  "customer_id",
+  "transactionid",
+  "transactionamount",
+  "linkexpirydate",
+  "linkcreated_at",
+  "linkcreatedby",
+  "linkremark",
+  "linkurl",
+  "payment_link_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_6gzb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "order_id",
+   "fieldtype": "Data",
+   "label": "order_id"
+  },
+  {
+   "fieldname": "customer_id",
+   "fieldtype": "Data",
+   "label": "customer_id"
+  },
+  {
+   "fieldname": "transactionid",
+   "fieldtype": "Data",
+   "label": "transactionid",
+   "no_copy": 1,
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "transactionamount",
+   "fieldtype": "Data",
+   "label": "transactionamount"
+  },
+  {
+   "fieldname": "linkexpirydate",
+   "fieldtype": "Data",
+   "label": "linkexpirydate"
+  },
+  {
+   "fieldname": "linkcreated_at",
+   "fieldtype": "Data",
+   "label": "linkcreated_at"
+  },
+  {
+   "fieldname": "linkcreatedby",
+   "fieldtype": "Data",
+   "label": "linkcreatedby"
+  },
+  {
+   "fieldname": "linkremark",
+   "fieldtype": "Data",
+   "label": "linkremark"
+  },
+  {
+   "fieldname": "linkurl",
+   "fieldtype": "Data",
+   "label": "linkurl"
+  },
+  {
+   "fieldname": "payment_link_status",
+   "fieldtype": "Link",
+   "label": "Payment Link Status",
+   "options": "Payment Link Status"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-23 16:39:12.622304",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Payment Link",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

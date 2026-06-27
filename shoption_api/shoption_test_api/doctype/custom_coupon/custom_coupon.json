@@ -1,0 +1,204 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:coupon_code",
+ "creation": "2025-12-17 18:19:44.449735",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "coupon_identity_section",
+  "coupon_code",
+  "enabled",
+  "coupon_description",
+  "discount_rules_section",
+  "discount_type",
+  "apply_discount_on",
+  "column_break_glop",
+  "discount",
+  "maximum_discount_amount",
+  "order_conditions_section",
+  "min_order_amount",
+  "column_break_bhyx",
+  "min_qty",
+  "max_qty",
+  "user__customer_conditions_section",
+  "applicable_for",
+  "customer_group",
+  "section_break_yblj",
+  "valid_from",
+  "column_break_fhmg",
+  "valid_till",
+  "section_break_itux",
+  "max_usage_global",
+  "usage_count",
+  "per_user_limit"
+ ],
+ "fields": [
+  {
+   "fieldname": "coupon_identity_section",
+   "fieldtype": "Section Break",
+   "label": "Coupon Identity"
+  },
+  {
+   "fieldname": "coupon_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Coupon Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "coupon_description",
+   "fieldtype": "Small Text",
+   "label": "Coupon Description"
+  },
+  {
+   "fieldname": "discount_rules_section",
+   "fieldtype": "Section Break",
+   "label": "Discount Rules"
+  },
+  {
+   "default": "Percentage",
+   "fieldname": "discount_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Discount Type",
+   "options": "Percentage\nAmount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "maximum_discount_amount",
+   "fieldtype": "Currency",
+   "label": "Maximum Discount Amount"
+  },
+  {
+   "default": "Grand Total",
+   "fieldname": "apply_discount_on",
+   "fieldtype": "Select",
+   "label": "Apply Discount On",
+   "options": "Net Total\nGrand Total"
+  },
+  {
+   "fieldname": "column_break_glop",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "order_conditions_section",
+   "fieldtype": "Section Break",
+   "label": "Order Conditions"
+  },
+  {
+   "fieldname": "min_order_amount",
+   "fieldtype": "Currency",
+   "label": "Minimum Order Amount"
+  },
+  {
+   "fieldname": "column_break_bhyx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "min_qty",
+   "fieldtype": "Int",
+   "label": "Minimum Quantity"
+  },
+  {
+   "fieldname": "max_qty",
+   "fieldtype": "Int",
+   "label": "Maximum Quantity"
+  },
+  {
+   "fieldname": "user__customer_conditions_section",
+   "fieldtype": "Section Break",
+   "label": "User / Customer Conditions"
+  },
+  {
+   "fieldname": "applicable_for",
+   "fieldtype": "Select",
+   "label": "Applicable For"
+  },
+  {
+   "fieldname": "customer_group",
+   "fieldtype": "Link",
+   "label": "Applicable Customer Group",
+   "options": "Customer Group"
+  },
+  {
+   "fieldname": "section_break_yblj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "valid_from",
+   "fieldtype": "Date",
+   "label": "Valid From"
+  },
+  {
+   "fieldname": "valid_till",
+   "fieldtype": "Date",
+   "label": "Valid Till"
+  },
+  {
+   "fieldname": "section_break_itux",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "max_usage_global",
+   "fieldtype": "Int",
+   "label": "Max Usage (Global)"
+  },
+  {
+   "default": "0",
+   "fieldname": "usage_count",
+   "fieldtype": "Int",
+   "label": "Usage Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "per_user_limit",
+   "fieldtype": "Int",
+   "label": "Per User Limit"
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Float",
+   "label": "Discount"
+  },
+  {
+   "fieldname": "column_break_fhmg",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-19 16:31:00.518993",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Custom Coupon",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

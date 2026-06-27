@@ -1,0 +1,296 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "creation": "2025-12-24 16:19:15.532386",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ljpd",
+  "txn_id",
+  "order_id",
+  "userid",
+  "amount",
+  "status",
+  "entrytype",
+  "created_at",
+  "statusupdateddate",
+  "firstname",
+  "email",
+  "phone",
+  "productinfo",
+  "callbackurl",
+  "request_token",
+  "request_decodedtoken",
+  "request_cleanedtoken",
+  "request_hashstring",
+  "request_hash",
+  "response_mihpayid",
+  "response_mode",
+  "response_unmappedstatus",
+  "response_key",
+  "response_discount",
+  "response_net_amount_debit",
+  "response_addedon",
+  "response_payment_source",
+  "response_pg_type",
+  "response_bank_ref_num",
+  "response_bankcode",
+  "response_error",
+  "response_error_message",
+  "response_splitinfo",
+  "response_payuamount",
+  "response_payu_productinfo",
+  "response_payu_firstname",
+  "response_payu_email",
+  "response_payu_phone",
+  "response_payu_txnid",
+  "response_payu_hash"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ljpd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "txn_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Txn ID"
+  },
+  {
+   "fieldname": "order_id",
+   "fieldtype": "Data",
+   "label": "Order ID"
+  },
+  {
+   "fieldname": "userid",
+   "fieldtype": "Data",
+   "label": "User ID"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Data",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Status"
+  },
+  {
+   "fieldname": "entrytype",
+   "fieldtype": "Data",
+   "label": "Entry Type"
+  },
+  {
+   "fieldname": "created_at",
+   "fieldtype": "Datetime",
+   "label": "Created At"
+  },
+  {
+   "fieldname": "statusupdateddate",
+   "fieldtype": "Datetime",
+   "label": "Status Updated Date"
+  },
+  {
+   "fieldname": "firstname",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "productinfo",
+   "fieldtype": "Long Text",
+   "label": "Product Info"
+  },
+  {
+   "fieldname": "callbackurl",
+   "fieldtype": "Data",
+   "label": "Callback URL"
+  },
+  {
+   "fieldname": "request_token",
+   "fieldtype": "Long Text",
+   "label": "Request Token"
+  },
+  {
+   "fieldname": "request_decodedtoken",
+   "fieldtype": "Long Text",
+   "label": "Decoded Token"
+  },
+  {
+   "fieldname": "request_cleanedtoken",
+   "fieldtype": "Long Text",
+   "label": "Cleaned Token"
+  },
+  {
+   "fieldname": "request_hashstring",
+   "fieldtype": "Long Text",
+   "label": "Hash String"
+  },
+  {
+   "fieldname": "request_hash",
+   "fieldtype": "Data",
+   "label": "Request Hash"
+  },
+  {
+   "fieldname": "response_mihpayid",
+   "fieldtype": "Data",
+   "label": "MIHPay ID"
+  },
+  {
+   "fieldname": "response_mode",
+   "fieldtype": "Data",
+   "label": "Payment Mode"
+  },
+  {
+   "fieldname": "response_unmappedstatus",
+   "fieldtype": "Data",
+   "label": "Unmapped Status"
+  },
+  {
+   "fieldname": "response_key",
+   "fieldtype": "Data",
+   "label": "Key"
+  },
+  {
+   "fieldname": "response_discount",
+   "fieldtype": "Data",
+   "label": "Discount"
+  },
+  {
+   "fieldname": "response_net_amount_debit",
+   "fieldtype": "Data",
+   "label": "Net Amount Debit"
+  },
+  {
+   "fieldname": "response_addedon",
+   "fieldtype": "Data",
+   "label": "Added On"
+  },
+  {
+   "fieldname": "response_payment_source",
+   "fieldtype": "Data",
+   "label": "Payment Source"
+  },
+  {
+   "fieldname": "response_pg_type",
+   "fieldtype": "Data",
+   "label": "PG Type"
+  },
+  {
+   "fieldname": "response_bank_ref_num",
+   "fieldtype": "Data",
+   "label": "Bank Ref No"
+  },
+  {
+   "fieldname": "response_bankcode",
+   "fieldtype": "Data",
+   "label": "Bank Code"
+  },
+  {
+   "fieldname": "response_error",
+   "fieldtype": "Data",
+   "label": "Error Code"
+  },
+  {
+   "fieldname": "response_error_message",
+   "fieldtype": "Long Text",
+   "label": "Error Message"
+  },
+  {
+   "fieldname": "response_splitinfo",
+   "fieldtype": "Long Text",
+   "label": "Split Info"
+  },
+  {
+   "fieldname": "response_payuamount",
+   "fieldtype": "Data",
+   "label": "PayU Amount"
+  },
+  {
+   "fieldname": "response_payu_productinfo",
+   "fieldtype": "Long Text",
+   "label": "PayU Product Info"
+  },
+  {
+   "fieldname": "response_payu_firstname",
+   "fieldtype": "Data",
+   "label": "PayU First Name"
+  },
+  {
+   "fieldname": "response_payu_email",
+   "fieldtype": "Data",
+   "label": "PayU Email"
+  },
+  {
+   "fieldname": "response_payu_phone",
+   "fieldtype": "Data",
+   "label": "PayU Phone"
+  },
+  {
+   "fieldname": "response_payu_txnid",
+   "fieldtype": "Data",
+   "label": "PayU Txn ID"
+  },
+  {
+   "fieldname": "response_payu_hash",
+   "fieldtype": "Long Text",
+   "label": "PayU Hash"
+  }
+ ],
+ "grid_page_length": 50,
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-21 14:33:55.809809",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Payment Gateway Transaction",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

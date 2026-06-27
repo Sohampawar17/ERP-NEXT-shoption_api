@@ -1,0 +1,964 @@
+﻿MarketplaceId,MarketplaceName,TehsilId,TehsilName,MarketplaceStatus
+61935,mai,6210,Kerakat,Unapproved
+50512,Machhlishahr,6211,Machhlishahr,Approved
+50513,Mariahu,6212,Mariahu,Approved
+61779,karaundi bzar,6212,Mariahu,Unapproved
+61780,Karaundi Bazar,6212,Mariahu,Unapproved
+50514,Shahganj,6213,Shahganj,Approved
+50515,Garautha,6214,Garautha,Approved
+50516,Jhansi,6215,Jhansi,Approved
+50517,Mauranipur,6216,Mauranipur,Approved
+50518,Moth,6217,Moth,Approved
+50519,Tahrauli,6218,Tahrauli,Approved
+50520,Chhibramau,6219,Chhibramau,Approved
+50521,Kannauj,6220,Kannauj,Approved
+50522,Tirwa,6221,Tirwa,Approved
+61943,Khadini ,6221,Tirwa,Unapproved
+50523,Akbarpur,6222,Akbarpur,Approved
+50524,Bhognipur,6223,Bhognipur,Approved
+50525,Derapur,6224,Derapur,Approved
+50526,Maitha,6225,Maitha,Approved
+50527,Rasulabad,6226,Rasulabad,Approved
+50528,Sikandra,6227,Sikandra,Approved
+50529,Bilhaur,6228,Bilhaur,Approved
+50530,Ghatampur,6229,Ghatampur,Approved
+50531,Kanpur,6230,Kanpur,Approved
+50532,Narwal,6231,Narwal,Approved
+50533,Kasganj,6232,Kasganj,Approved
+51516,nyoli,6232,Kasganj,Unapproved
+51517,sonron,6232,Kasganj,Unapproved
+51518,kashgnj,6232,Kasganj,Unapproved
+50534,Patiyali,6233,Patiyali,Approved
+50535,Sahawar,6234,Sahawar,Approved
+50536,Chail,6235,Chail,Approved
+50537,Manjhanpur,6236,Manjhanpur,Approved
+50538,Sirathu,6237,Sirathu,Approved
+50539,Dhaurahara,6238,Dhaurahara,Approved
+50540,Gola Gokaran Nath,6239,Gola Gokaran Nath,Approved
+51522,padriya tula,6239,Gola Gokaran Nath,Unapproved
+50541,Lakhimpur,6240,Lakhimpur,Approved
+50542,Mitauli,6241,Mitauli,Approved
+50543,Mohammdi,6242,Mohammdi,Approved
+50544,Nighasan,6243,Nighasan,Approved
+50545,Palia,6244,Palia,Approved
+50546,Hata,6245,Hata,Approved
+50547,Kaptanganj,6246,Kaptanganj,Approved
+50548,Kasya,6247,Kasya,Approved
+50549,Khadda,6248,Khadda,Approved
+50550,Padrauna,6249,Padrauna,Approved
+50551,Tamkuhi Raj,6250,Tamkuhi Raj,Approved
+50552,Lalitpur,6251,Lalitpur,Approved
+50553,Mahroni,6252,Mahroni,Approved
+50554,Mdawara,6253,Mdawara,Approved
+50555,Pali,6254,Pali,Approved
+50556,Talbehat,6255,Talbehat,Approved
+50557,Bakshi Ka Talab,6256,Bakshi Ka Talab,Approved
+50558,Malihabad,6257,Malihabad,Approved
+61598,Mall ,6257,Malihabad,Unapproved
+50559,Mohanlalganj,6258,Mohanlalganj,Approved
+50560,Sadar,6259,Sadar,Approved
+50561,Sarojani Nagar,6260,Sarojani Nagar,Approved
+50562,Charkhari,6261,Charkhari,Approved
+50563,Kulpahar,6262,Kulpahar,Approved
+50564,Mahoba,6263,Mahoba,Approved
+50565,Maharajganj,6264,Maharajganj,Approved
+50566,Nautanwa,6265,Nautanwa,Approved
+50567,Nichlaul,6266,Nichlaul,Approved
+50568,Pharenda,6267,Pharenda,Approved
+50569,Bhogaon,6268,Bhogaon,Approved
+50570,Ghiror,6269,Ghiror,Approved
+50571,Karhal,6270,Karhal,Approved
+50572,Kishni,6271,Kishni,Approved
+50573,Kurawali,6272,Kurawali,Approved
+50574,Mainpuri,6273,Mainpuri,Approved
+50575,Chhata,6274,Chhata,Approved
+50576,Govardhan,6275,Govardhan,Approved
+50577,Mahavan,6276,Mahavan,Approved
+50578,Mat,6277,Mat,Approved
+50579,Mathura,6278,Mathura,Approved
+50580,Ghosi,6279,Ghosi,Approved
+50581,Madhuban,6280,Madhuban,Approved
+50582,Maunath Bhanjan,6281,Maunath Bhanjan,Approved
+50583,Muhammadabad Gohna,6282,Muhammadabad Gohna,Approved
+50584,Mawana,6283,Mawana,Approved
+50585,Meerut,6284,Meerut,Approved
+61631,mawana,6284,Meerut,Unapproved
+50586,Sardhana,6285,Sardhana,Approved
+50587,Chunar,6286,Chunar,Approved
+50588,Lalganj,6287,Lalganj,Approved
+50589,Marihan,6288,Marihan,Approved
+50590,Mirzapur,6289,Mirzapur,Approved
+50591,Bilari,6290,Bilari,Approved
+50592,Kanth,6291,Kanth,Approved
+50593,Moradabad,6292,Moradabad,Approved
+50594,Thakurdwara,6293,Thakurdwara,Approved
+50595,Budhana,6294,Budhana,Approved
+50596,Jansath,6295,Jansath,Approved
+50597,Khatauli,6296,Khatauli,Approved
+50598,Muzaffarnagar,6297,Muzaffarnagar,Approved
+50599,Amariya,6298,Amariya,Approved
+50600,Bisalpur,6299,Bisalpur,Approved
+61659,other ,6299,Bisalpur,Unapproved
+50601,Kalinagar,6300,Kalinagar,Approved
+50602,Pilibhit,6301,Pilibhit,Approved
+50603,Puranpur,6302,Puranpur,Approved
+51561,guladiya,6302,Puranpur,Unapproved
+50604,Kunda,6303,Kunda,Approved
+50605,Lalganj,6304,Lalganj,Approved
+51487,Mishra market Deewanganj ,6304,Lalganj,Unapproved
+50606,Patti,6305,Patti,Approved
+50607,Pratapgarh,6306,Pratapgarh,Approved
+50608,Raniganj,6307,Raniganj,Approved
+50609,Allahabad,6308,Allahabad,Approved
+50610,Bara,6309,Bara,Approved
+50611,Handia,6310,Handia,Approved
+50612,Karchhana,6311,Karchhana,Approved
+50613,Koraon,6312,Koraon,Approved
+50614,Meja,6313,Meja,Approved
+50615,Phulpur,6314,Phulpur,Approved
+50616,Soraon,6315,Soraon,Approved
+50617,Dalmau,6316,Dalmau,Approved
+50618,Lalganj,6317,Lalganj,Approved
+50619,Maharajganj,6318,Maharajganj,Approved
+50620,Rae Bareli,6319,Rae Bareli,Approved
+50621,Salon,6320,Salon,Approved
+50622,Unchahar,6321,Unchahar,Approved
+50623,Bilaspur,6322,Bilaspur,Approved
+50624,Milak,6323,Milak,Approved
+61647,Dhamor Malak Rampur ,6323,Milak,Unapproved
+50625,Rampur,6324,Rampur,Approved
+50626,Shahabad,6325,Shahabad,Approved
+50627,Suar,6326,Suar,Approved
+50628,Tanda,6327,Tanda,Approved
+61692,Sarawa ,6327,Tanda,Unapproved
+61693,kheda,6327,Tanda,Unapproved
+61694,Banjariya ,6327,Tanda,Unapproved
+50629,Behat,6328,Behat,Approved
+50630,Deoband,6329,Deoband,Approved
+50631,Nakur,6330,Nakur,Approved
+50632,Rampur Maniharan,6331,Rampur Maniharan,Approved
+50633,Saharanpur,6332,Saharanpur,Approved
+50634,Chandausi,6333,Chandausi,Approved
+50635,Gunnaur,6334,Gunnaur,Approved
+50636,Sambhal,6335,Sambhal,Approved
+50637,Ghanghata,6336,Ghanghata,Approved
+50638,Khalilabad,6337,Khalilabad,Approved
+50639,Mehdawal,6338,Mehdawal,Approved
+50640,Jalalabad,6339,Jalalabad,Approved
+50641,Kalan,6340,Kalan,Approved
+50642,Powayan,6341,Powayan,Approved
+50643,Shahjahanpur,6342,Shahjahanpur,Approved
+50644,Tilhar,6343,Tilhar,Approved
+61630,nigohi,6343,Tilhar,Unapproved
+50645,Kairana,6344,Kairana,Approved
+50646,Shamli,6345,Shamli,Approved
+50647,Un,6346,Un,Approved
+50648,Bhinga,6347,Bhinga,Approved
+61856,parsa dehriya,6347,Bhinga,Unapproved
+50649,Ikauna,6348,Ikauna,Approved
+50650,Jamunaha,6349,Jamunaha,Approved
+50651,Bansi,6350,Bansi,Approved
+50652,Domariyaganj,6351,Domariyaganj,Approved
+50653,Itwa,6352,Itwa,Approved
+50654,Naugarh,6353,Naugarh,Approved
+50655,Shohratgarh,6354,Shohratgarh,Approved
+50656,Biswan,6355,Biswan,Approved
+50657,Laharpur,6356,Laharpur,Approved
+50658,Mahmudabad,6357,Mahmudabad,Approved
+50659,Maholi,6358,Maholi,Approved
+50660,Misrikh,6359,Misrikh,Approved
+50661,Sidhauli,6360,Sidhauli,Approved
+50662,Sitapur,6361,Sitapur,Approved
+50663,Dudhi,6362,Dudhi,Approved
+50664,Ghorawal,6363,Ghorawal,Approved
+50665,Obra,6364,Obra,Approved
+50666,Robertsganj,6365,Robertsganj,Approved
+50667,Baldirai,6366,Baldirai,Approved
+50668,Jaisinghpur,6367,Jaisinghpur,Approved
+50669,Kadipur,6368,Kadipur,Approved
+50670,Lambhua,6369,Lambhua,Approved
+50671,Sultanpur,6370,Sultanpur,Approved
+50672,Bangarmau,6371,Bangarmau,Approved
+50673,Bighapur,6372,Bighapur,Approved
+50674,Hasanganj,6373,Hasanganj,Approved
+50675,Purwa,6374,Purwa,Approved
+50676,Safipur,6375,Safipur,Approved
+50677,Unnao,6376,Unnao,Approved
+50678,Pindra,6377,Pindra,Approved
+50679,Rajatalab,6378,Rajatalab,Approved
+61888,kachhawan sabjimandi,6378,Rajatalab,Unapproved
+50680,Varanasi Sadar,6379,Varanasi Sadar,Approved
+50681,Almora,6380,Almora,Approved
+50682,Bagwalipokhar,6381,Bagwalipokhar,Approved
+50683,Bhanoli,6382,Bhanoli,Approved
+50684,Bhikiasain,6383,Bhikiasain,Approved
+50685,Chaukhutiya,6384,Chaukhutiya,Approved
+50686,Dhaulchhina,6385,Dhaulchhina,Approved
+50687,Dhyari,6386,Dhyari,Approved
+50688,Dwarahat,6387,Dwarahat,Approved
+50689,Jainti,6388,Jainti,Approved
+50690,Jalali,6389,Jalali,Approved
+50691,Lamgada,6390,Lamgada,Approved
+50692,Machhor,6391,Machhor,Approved
+50693,Ranikhet,6392,Ranikhet,Approved
+50694,Someshwar,6393,Someshwar,Approved
+50695,Sult,6394,Sult,Approved
+50696,Syalde,6395,Syalde,Approved
+50697,Bageshwar,6396,Bageshwar,Approved
+50698,Dugnakuri,6397,Dugnakuri,Approved
+50699,Garud,6398,Garud,Approved
+50700,Kafligair,6399,Kafligair,Approved
+50701,Kanda,6400,Kanda,Approved
+50702,Kapkot,6401,Kapkot,Approved
+50703,Shama,6402,Shama,Approved
+50704,Adibadri,6403,Adibadri,Approved
+50705,Chamoli,6404,Chamoli,Approved
+50706,Dewal,6405,Dewal,Approved
+50707,Gairsain,6406,Gairsain,Approved
+50708,Ghaat,6407,Ghaat,Approved
+50709,Jilasu,6408,Jilasu,Approved
+50710,Joshimath,6409,Joshimath,Approved
+50711,Karnaprayag,6410,Karnaprayag,Approved
+50712,Nandprayag,6411,Nandprayag,Approved
+50713,Narayanbagar,6412,Narayanbagar,Approved
+50714,Pokhari,6413,Pokhari,Approved
+50715,Tharali,6414,Tharali,Approved
+50716,Barakot,6415,Barakot,Approved
+50717,Champawat,6416,Champawat,Approved
+50718,Lohaghat,6417,Lohaghat,Approved
+50719,Manch,6418,Manch,Approved
+50720,Pati,6419,Pati,Approved
+50721,Poornagiri,6420,Poornagiri,Approved
+50722,Pulla Gumdesh,6421,Pulla Gumdesh,Approved
+50723,Chakrata,6422,Chakrata,Approved
+50724,Dehradun,6423,Dehradun,Approved
+50725,Doiwala,6424,Doiwala,Approved
+50726,Kalsi,6425,Kalsi,Approved
+50727,Mussoorie,6426,Mussoorie,Approved
+50728,Rishikesh,6427,Rishikesh,Approved
+50729,Tyuni,6428,Tyuni,Approved
+50730,Vikas Nagar,6429,Vikas Nagar,Approved
+50731,Bhagwanpur,6430,Bhagwanpur,Approved
+50732,Hardwar,6431,Hardwar,Approved
+50733,Laksar,6432,Laksar,Approved
+50734,Laldhang,6433,Laldhang,Approved
+50735,Narsan,6434,Narsan,Approved
+50736,Roorkee,6435,Roorkee,Approved
+50737,Betalghat,6436,Betalghat,Approved
+50738,Dhari,6437,Dhari,Approved
+50739,Haldwani,6438,Haldwani,Approved
+50740,Kaladhungi,6439,Kaladhungi,Approved
+50741,Kosya Kutauli,6440,Kosya Kutauli,Approved
+50742,Lalkuan,6441,Lalkuan,Approved
+50743,Nainital,6442,Nainital,Approved
+50744,Okhalkanda,6443,Okhalkanda,Approved
+50745,Ramgarh,6444,Ramgarh,Approved
+50746,Ramnagar,6445,Ramnagar,Approved
+50747,Bironkhal,6446,Bironkhal,Approved
+50748,Chakisain,6447,Chakisain,Approved
+50749,Chaubatta Khal,6448,Chaubatta Khal,Approved
+50750,Dhoomakot,6449,Dhoomakot,Approved
+50751,Jakhanikhal,6450,Jakhanikhal,Approved
+50752,Kotdwara,6451,Kotdwara,Approved
+50753,Lansdowne,6452,Lansdowne,Approved
+50754,Pauri,6453,Pauri,Approved
+50755,Rikhanikhal,6454,Rikhanikhal,Approved
+50756,Satpuli,6455,Satpuli,Approved
+50757,Srinagar,6456,Srinagar,Approved
+50758,Thailisain,6457,Thailisain,Approved
+50759,Yamkeshwar,6458,Yamkeshwar,Approved
+50760,Bangapani,6459,Bangapani,Approved
+50761,Berinag,6460,Berinag,Approved
+50762,Devalthal,6461,Devalthal,Approved
+50763,Dharchula,6462,Dharchula,Approved
+50764,Didihat,6463,Didihat,Approved
+50765,Ganai Gangoli,6464,Ganai Gangoli,Approved
+50766,Gangolihat,6465,Gangolihat,Approved
+50767,Kanalichhina,6466,Kanalichhina,Approved
+50768,Munsiari,6467,Munsiari,Approved
+50769,Pankhu,6468,Pankhu,Approved
+50770,Pithoragarh,6469,Pithoragarh,Approved
+50771,Tejam,6470,Tejam,Approved
+50772,Thal,6471,Thal,Approved
+50773,Basukedar,6472,Basukedar,Approved
+50774,Jakholi*,6473,Jakholi*,Approved
+50775,Rudraprayag,6474,Rudraprayag,Approved
+50776,Ukhimath,6475,Ukhimath,Approved
+50777,Balganga,6476,Balganga,Approved
+50778,Devprayag,6477,Devprayag,Approved
+50779,Dhanaulti,6478,Dhanaulti,Approved
+50780,Gaja,6479,Gaja,Approved
+50781,Ghansali,6480,Ghansali,Approved
+50782,Jakhani Dhar,6481,Jakhani Dhar,Approved
+50783,Kandisaur,6482,Kandisaur,Approved
+50784,Kirtinagar,6483,Kirtinagar,Approved
+50785,Madannegi,6484,Madannegi,Approved
+50786,Nainbag,6485,Nainbag,Approved
+61946,pantwari,6485,Nainbag,Unapproved
+50787,Narendra Nagar,6486,Narendra Nagar,Approved
+50788,Pawkidevi,6487,Pawkidevi,Approved
+50789,Pratapnagar,6488,Pratapnagar,Approved
+50790,Tehri,6489,Tehri,Approved
+50791,Bajpur,6490,Bajpur,Approved
+50792,Gadarpur,6491,Gadarpur,Approved
+50793,Jaspur,6492,Jaspur,Approved
+50794,Kashipur,6493,Kashipur,Approved
+50795,Khatima,6494,Khatima,Approved
+50796,Kichha,6495,Kichha,Approved
+50797,Nanakmatta,6496,Nanakmatta,Approved
+50798,Rudrapur,6497,Rudrapur,Approved
+50799,Sitarganj,6498,Sitarganj,Approved
+50800,Barnigad,6499,Barnigad,Approved
+50801,Bhatwari,6500,Bhatwari,Approved
+50802,Chinyali Saur,6501,Chinyali Saur,Approved
+50803,Dhauntari,6502,Dhauntari,Approved
+50804,Dunda,6503,Dunda,Approved
+50805,Joshiyara,6504,Joshiyara,Approved
+50806,Mori,6505,Mori,Approved
+50807,Puraula,6506,Puraula,Approved
+50808,Rajgarhi,6507,Rajgarhi,Approved
+50809,Sankari,6508,Sankari,Approved
+50810,Alipurduar - I,6509,Alipurduar - I,Approved
+50811,Alipurduar - II,6510,Alipurduar - II,Approved
+50812,Falakata,6511,Falakata,Approved
+50813,Kalchini,6512,Kalchini,Approved
+50814,Kumargram,6513,Kumargram,Approved
+50815,Madarihat,6514,Madarihat,Approved
+50816,Bankura - I,6515,Bankura - I,Approved
+50817,Bankura - II,6516,Bankura - II,Approved
+50818,Barjora,6517,Barjora,Approved
+50819,Chhatna,6518,Chhatna,Approved
+50820,Gangajalghati,6519,Gangajalghati,Approved
+50821,Hirbandh,6520,Hirbandh,Approved
+50822,Indpur,6521,Indpur,Approved
+50823,Indus,6522,Indus,Approved
+50824,Jaypur,6523,Jaypur,Approved
+50825,Khatra,6524,Khatra,Approved
+50826,Kotulpur,6525,Kotulpur,Approved
+50827,Mejhia,6526,Mejhia,Approved
+50828,Onda,6527,Onda,Approved
+50829,Patrasayer,6528,Patrasayer,Approved
+50830,Raipur,6529,Raipur,Approved
+50831,Ranibandh,6530,Ranibandh,Approved
+50832,Saltora,6531,Saltora,Approved
+50833,Sarenga,6532,Sarenga,Approved
+50834,Simlapal,6533,Simlapal,Approved
+50835,Sonamukhi,6534,Sonamukhi,Approved
+50836,Taldangra,6535,Taldangra,Approved
+50837,Vishnupur,6536,Vishnupur,Approved
+50838,Bolpur Sriniketan,6537,Bolpur Sriniketan,Approved
+50839,Dubrajpur,6538,Dubrajpur,Approved
+50840,Illambazar,6539,Illambazar,Approved
+50841,Khoyrasol,6540,Khoyrasol,Approved
+50842,Labpur,6541,Labpur,Approved
+50843,Mayureswar - I,6542,Mayureswar - I,Approved
+50844,Mayureswar - II,6543,Mayureswar - II,Approved
+50845,Mohammad Bazar,6544,Mohammad Bazar,Approved
+50846,Murarai - I,6545,Murarai - I,Approved
+50847,Murarai - II,6546,Murarai - II,Approved
+50848,Nalhati - I,6547,Nalhati - I,Approved
+50849,Nalhati - II,6548,Nalhati - II,Approved
+50850,Nanoor,6549,Nanoor,Approved
+50851,Rajnagar,6550,Rajnagar,Approved
+50852,Rampurhat - I,6551,Rampurhat - I,Approved
+50853,Rampurhat - II,6552,Rampurhat - II,Approved
+50854,Sainthia,6553,Sainthia,Approved
+50855,Suri - I,6554,Suri - I,Approved
+50856,Suri - II,6555,Suri - II,Approved
+50857,Cooch Behar - I,6556,Cooch Behar - I,Approved
+51541,bb,6556,Cooch Behar - I,Unapproved
+50858,Cooch Behar - II,6557,Cooch Behar - II,Approved
+50859,Dinhata - I,6558,Dinhata - I,Approved
+50860,Dinhata - II,6559,Dinhata - II,Approved
+50861,Haldibari,6560,Haldibari,Approved
+50862,Mathabhanga - I,6561,Mathabhanga - I,Approved
+50863,Mathabhanga II,6562,Mathabhanga II,Approved
+50864,Mekliganj,6563,Mekliganj,Approved
+50865,Sitai,6564,Sitai,Approved
+50866,Sitalkuchi,6565,Sitalkuchi,Approved
+50867,Tufanganj - I,6566,Tufanganj - I,Approved
+50868,Tufanganj - II,6567,Tufanganj - II,Approved
+50869,Balurghat,6568,Balurghat,Approved
+50870,Bansihari,6569,Bansihari,Approved
+50871,Gangarampur,6570,Gangarampur,Approved
+50872,Harirampur,6571,Harirampur,Approved
+50873,Hilli,6572,Hilli,Approved
+50874,Kumarganj,6573,Kumarganj,Approved
+50875,Kushmundi,6574,Kushmundi,Approved
+50876,Tapan,6575,Tapan,Approved
+50877,Darjeeling Pulbazar,6576,Darjeeling Pulbazar,Approved
+50878,Jorebunglow Sukiapokhri,6577,Jorebunglow Sukiapokhri,Approved
+50879,Kharibari,6578,Kharibari,Approved
+50880,Kurseong,6579,Kurseong,Approved
+50881,Matigara,6580,Matigara,Approved
+50882,Mirik,6581,Mirik,Approved
+50883,Naxalbari,6582,Naxalbari,Approved
+50884,Phansidewa,6583,Phansidewa,Approved
+50885,Rangli Rangliot,6584,Rangli Rangliot,Approved
+50886,Arambag,6585,Arambag,Approved
+50887,Balagarh,6586,Balagarh,Approved
+50888,Chanditala - I,6587,Chanditala - I,Approved
+50889,Chanditala - II,6588,Chanditala - II,Approved
+50890,Chinsurah - Magra,6589,Chinsurah - Magra,Approved
+50891,Dhaniakhali,6590,Dhaniakhali,Approved
+50892,Goghat - I,6591,Goghat - I,Approved
+50893,Goghat - II,6592,Goghat - II,Approved
+50894,Haripal,6593,Haripal,Approved
+50895,Jangipara,6594,Jangipara,Approved
+50896,Khanakul - I,6595,Khanakul - I,Approved
+50897,Khanakul - II,6596,Khanakul - II,Approved
+50898,Pandua,6597,Pandua,Approved
+50899,Polba - Dadpur,6598,Polba - Dadpur,Approved
+50900,Pursura,6599,Pursura,Approved
+50901,Serampur Uttarpara,6600,Serampur Uttarpara,Approved
+50902,Singur,6601,Singur,Approved
+50903,Tarakeswar,6602,Tarakeswar,Approved
+50904,Amta - I,6603,Amta - I,Approved
+50905,Amta - II,6604,Amta - II,Approved
+50906,Bagnan - I,6605,Bagnan - I,Approved
+50907,Bagnan - II,6606,Bagnan - II,Approved
+50908,Bally Jagachha,6607,Bally Jagachha,Approved
+50909,Domjur,6608,Domjur,Approved
+50910,Jagatballavpur,6609,Jagatballavpur,Approved
+50911,Panchla,6610,Panchla,Approved
+50912,Sankrail,6611,Sankrail,Approved
+50913,Shyampur - I,6612,Shyampur - I,Approved
+50914,Shyampur - II,6613,Shyampur - II,Approved
+50915,Udaynarayanpur,6614,Udaynarayanpur,Approved
+50916,Uluberia - I,6615,Uluberia - I,Approved
+50917,Uluberia - II,6616,Uluberia - II,Approved
+50918,Banarhat,6617,Banarhat,Approved
+50919,Dhupguri,6618,Dhupguri,Approved
+50920,Jalpaiguri,6619,Jalpaiguri,Approved
+50921,Kranti,6620,Kranti,Approved
+50922,Mal,6621,Mal,Approved
+50923,Matiali,6622,Matiali,Approved
+50924,Maynaguri,6623,Maynaguri,Approved
+50925,Nagrakata,6624,Nagrakata,Approved
+50926,Rajganj,6625,Rajganj,Approved
+50927,Binpur - I,6626,Binpur - I,Approved
+50928,Binpur - II,6627,Binpur - II,Approved
+61936,BELPHARI ,6627,Binpur - II,Unapproved
+50929,Gopiballavpur - I,6628,Gopiballavpur - I,Approved
+50930,Gopiballavpur - II,6629,Gopiballavpur - II,Approved
+50931,Jamboni,6630,Jamboni,Approved
+50932,Jhargram,6631,Jhargram,Approved
+50933,Nayagram,6632,Nayagram,Approved
+50934,Sankrail,6633,Sankrail,Approved
+50935,Gorubathan,6634,Gorubathan,Approved
+50936,Kalimpong -I,6635,Kalimpong -I,Approved
+50937,Lava,6636,Lava,Approved
+50938,Lavaold,6637,Lavaold,Approved
+50939,Pedong,6638,Pedong,Approved
+50940,Bamangola,6639,Bamangola,Approved
+50941,Chanchal - I,6640,Chanchal - I,Approved
+50942,Chanchal - II,6641,Chanchal - II,Approved
+50943,English Bazar,6642,English Bazar,Approved
+50944,Gazole,6643,Gazole,Approved
+50945,Habibpur,6644,Habibpur,Approved
+50946,Harischandrapur - I,6645,Harischandrapur - I,Approved
+50947,Harischandrapur - II,6646,Harischandrapur - II,Approved
+50948,Kaliachak - I,6647,Kaliachak - I,Approved
+50949,Kaliachak - II,6648,Kaliachak - II,Approved
+50950,Kaliachak - III,6649,Kaliachak - III,Approved
+50951,Maldah (Old),6650,Maldah (Old),Approved
+50952,Manikchak,6651,Manikchak,Approved
+50953,Ratua - I,6652,Ratua - I,Approved
+50954,Ratua - II,6653,Ratua - II,Approved
+50955,Beldanga - I,6654,Beldanga - I,Approved
+50956,Beldanga - II,6655,Beldanga - II,Approved
+50957,Berhampore,6656,Berhampore,Approved
+50958,Bhagawangola - I,6657,Bhagawangola - I,Approved
+50959,Bhagawangola - II,6658,Bhagawangola - II,Approved
+50960,Bharatpur - I,6659,Bharatpur - I,Approved
+50961,Bharatpur - II,6660,Bharatpur - II,Approved
+50962,Burwan,6661,Burwan,Approved
+50963,Domkal,6662,Domkal,Approved
+50964,Farakka,6663,Farakka,Approved
+50965,Hariharpara,6664,Hariharpara,Approved
+50966,Jalangi,6665,Jalangi,Approved
+50967,Kandi,6666,Kandi,Approved
+50968,Khargram,6667,Khargram,Approved
+50969,Lalgola,6668,Lalgola,Approved
+50970,Murshidabad Jiaganj,6669,Murshidabad Jiaganj,Approved
+50971,Nabagram,6670,Nabagram,Approved
+50972,Nawda,6671,Nawda,Approved
+50973,Raghunathganj - I,6672,Raghunathganj - I,Approved
+50974,Raghunathganj - II,6673,Raghunathganj - II,Approved
+50975,Raninagar - I,6674,Raninagar - I,Approved
+50976,Raninagar - II,6675,Raninagar - II,Approved
+50977,Sagardighi,6676,Sagardighi,Approved
+50978,Samserganj,6677,Samserganj,Approved
+50979,Suti - I,6678,Suti - I,Approved
+50980,Suti - II,6679,Suti - II,Approved
+50981,Chakdah,6680,Chakdah,Approved
+50982,Chapra,6681,Chapra,Approved
+50983,Hanskhali,6682,Hanskhali,Approved
+50984,Haringhata,6683,Haringhata,Approved
+50985,Kaliganj,6684,Kaliganj,Approved
+50986,Kalyani,6685,Kalyani,Approved
+50987,Karimpur - I,6686,Karimpur - I,Approved
+50988,Karimpur - II,6687,Karimpur - II,Approved
+50989,Krishnaganj,6688,Krishnaganj,Approved
+50990,Krishnagar - I,6689,Krishnagar - I,Approved
+50991,Krishnagar - II,6690,Krishnagar - II,Approved
+50992,Nabadwip,6691,Nabadwip,Approved
+50993,Nakashipara,6692,Nakashipara,Approved
+50994,Ranaghat - I,6693,Ranaghat - I,Approved
+50995,Ranaghat - II,6694,Ranaghat - II,Approved
+50996,Santipur,6695,Santipur,Approved
+50997,Tehatta - I,6696,Tehatta - I,Approved
+50998,Tehatta - II,6697,Tehatta - II,Approved
+50999,Amdanga,6698,Amdanga,Approved
+51000,Baduria,6699,Baduria,Approved
+51001,Bagda,6700,Bagda,Approved
+51002,Barasat - I,6701,Barasat - I,Approved
+51003,Barasat - II,6702,Barasat - II,Approved
+51004,Barrackpur - I,6703,Barrackpur - I,Approved
+51005,Barrackpur - II,6704,Barrackpur - II,Approved
+51006,Basirhat - I,6705,Basirhat - I,Approved
+51007,Basirhat - II,6706,Basirhat - II,Approved
+51008,Bongaon,6707,Bongaon,Approved
+51009,Deganga,6708,Deganga,Approved
+51010,Gaighata,6709,Gaighata,Approved
+51011,Habra - I,6710,Habra - I,Approved
+51012,Habra - II,6711,Habra - II,Approved
+51013,Haroa,6712,Haroa,Approved
+51014,Hasnabad,6713,Hasnabad,Approved
+51015,Hingalganj,6714,Hingalganj,Approved
+51016,Minakhan,6715,Minakhan,Approved
+51017,Rajarhat,6716,Rajarhat,Approved
+51018,Sandeshkhali - I,6717,Sandeshkhali - I,Approved
+51019,Sandeshkhali - II,6718,Sandeshkhali - II,Approved
+51020,Swarupnagar,6719,Swarupnagar,Approved
+51021,Andal,6720,Andal,Approved
+51022,Barabani,6721,Barabani,Approved
+51023,Durgapur Faridpur,6722,Durgapur Faridpur,Approved
+51024,Jamuria,6723,Jamuria,Approved
+51025,Kanksa,6724,Kanksa,Approved
+51026,Pandabeswar,6725,Pandabeswar,Approved
+51027,Raniganj,6726,Raniganj,Approved
+51028,Salanpur,6727,Salanpur,Approved
+51029,Chandrakona - I,6728,Chandrakona - I,Approved
+51030,Chandrakona - II,6729,Chandrakona - II,Approved
+51031,Dantan - I,6730,Dantan - I,Approved
+51032,Dantan - II,6731,Dantan - II,Approved
+51033,Daspur - I,6732,Daspur - I,Approved
+51034,Daspur - II,6733,Daspur - II,Approved
+51035,Debra,6734,Debra,Approved
+51036,Garbeta - I,6735,Garbeta - I,Approved
+51037,Garbeta - II,6736,Garbeta - II,Approved
+51038,Garbeta - III,6737,Garbeta - III,Approved
+51039,Ghatal,6738,Ghatal,Approved
+51040,Keshiary,6739,Keshiary,Approved
+51041,Keshpur,6740,Keshpur,Approved
+51042,Kharagpur - I,6741,Kharagpur - I,Approved
+51043,Kharagpur - II,6742,Kharagpur - II,Approved
+51044,Midnapore,6743,Midnapore,Approved
+51045,Mohanpur,6744,Mohanpur,Approved
+51046,Narayangarh,6745,Narayangarh,Approved
+51047,Pingla,6746,Pingla,Approved
+51048,Sabang,6747,Sabang,Approved
+51049,Salbani,6748,Salbani,Approved
+51050,Ausgram - I,6749,Ausgram - I,Approved
+51051,Ausgram - II,6750,Ausgram - II,Approved
+51052,Bhatar,6751,Bhatar,Approved
+51053,Burdwan - I,6752,Burdwan - I,Approved
+51054,Burdwan - II,6753,Burdwan - II,Approved
+51489,malandighi,6753,Burdwan - II,Approved
+51055,Galsi - I,6754,Galsi - I,Approved
+51056,Galsi - II,6755,Galsi - II,Approved
+51057,Jamalpur,6756,Jamalpur,Approved
+51058,Kalna - I,6757,Kalna - I,Approved
+51059,Kalna - II,6758,Kalna - II,Approved
+51060,Katwa - I,6759,Katwa - I,Approved
+51061,Katwa - II,6760,Katwa - II,Approved
+51062,Ketugram - I,6761,Ketugram - I,Approved
+51063,Ketugram - II,6762,Ketugram - II,Approved
+51064,Khandaghosh,6763,Khandaghosh,Approved
+51065,Mangolkote,6764,Mangolkote,Approved
+51066,Manteswar,6765,Manteswar,Approved
+51067,Memari - I,6766,Memari - I,Approved
+51068,Memari - II,6767,Memari - II,Approved
+51069,Purbasthali - I,6768,Purbasthali - I,Approved
+51070,Purbasthali - II,6769,Purbasthali - II,Approved
+51071,Raina - I,6770,Raina - I,Approved
+51496,May Village ,6770,Raina - I,Unapproved
+51072,Raina - II,6771,Raina - II,Approved
+51073,Bhagawanpur - I,6772,Bhagawanpur - I,Approved
+51074,Bhagawanpur - II,6773,Bhagawanpur - II,Approved
+51075,Chandipur,6774,Chandipur,Approved
+51076,Contai - I,6775,Contai - I,Approved
+51077,Contai - III,6776,Contai - III,Approved
+51078,Deshopran,6777,Deshopran,Approved
+51079,Egra - I,6778,Egra - I,Approved
+51080,Egra - II,6779,Egra - II,Approved
+51081,Haldia,6780,Haldia,Approved
+51082,Khejuri - I,6781,Khejuri - I,Approved
+51083,Khejuri - II,6782,Khejuri - II,Approved
+51084,Kolaghat,6783,Kolaghat,Approved
+51085,Mahisadal,6784,Mahisadal,Approved
+51086,Moyna,6785,Moyna,Approved
+51087,Nanda Kumar,6786,Nanda Kumar,Approved
+51088,Nandigram - I,6787,Nandigram - I,Approved
+51089,Nandigram - II,6788,Nandigram - II,Approved
+51090,Panskura,6789,Panskura,Approved
+51091,Potashpur - I,6790,Potashpur - I,Approved
+51092,Potashpur - II,6791,Potashpur - II,Approved
+51093,Ramnagar - I,6792,Ramnagar - I,Approved
+51475,digha,6792,Ramnagar - I,Unapproved
+51094,Ramnagar - II,6793,Ramnagar - II,Approved
+51095,Sahid Matangini,6794,Sahid Matangini,Approved
+51096,Sutahata,6795,Sutahata,Approved
+51097,Tamluk,6796,Tamluk,Approved
+51098,Arsha,6797,Arsha,Approved
+51099,Bagmundi,6798,Bagmundi,Approved
+51100,Balarampur,6799,Balarampur,Approved
+51101,Barabazar,6800,Barabazar,Approved
+51102,Bundwan,6801,Bundwan,Approved
+51103,Hura,6802,Hura,Approved
+51104,Jaipur,6803,Jaipur,Approved
+51105,Jhalda - I,6804,Jhalda - I,Approved
+51106,Jhalda - II,6805,Jhalda - II,Approved
+51107,Kashipur,6806,Kashipur,Approved
+51108,Manbazar - I,6807,Manbazar - I,Approved
+51109,Manbazar - II,6808,Manbazar - II,Approved
+51110,Neturia,6809,Neturia,Approved
+51111,Para,6810,Para,Approved
+51112,Puncha,6811,Puncha,Approved
+51113,Purulia - I,6812,Purulia - I,Approved
+51114,Purulia - II,6813,Purulia - II,Approved
+51115,Raghunathpur - I,6814,Raghunathpur - I,Approved
+51116,Raghunathpur - II,6815,Raghunathpur - II,Approved
+51117,Santuri,6816,Santuri,Approved
+51118,Baruipur,6817,Baruipur,Approved
+51119,Basanti,6818,Basanti,Approved
+51120,Bhangar - I,6819,Bhangar - I,Approved
+51121,Bhangar - II,6820,Bhangar - II,Approved
+51122,Bishnupur - I,6821,Bishnupur - I,Approved
+51123,Bishnupur - II,6822,Bishnupur - II,Approved
+51124,Budge Budge - I,6823,Budge Budge - I,Approved
+51125,Budge Budge - II,6824,Budge Budge - II,Approved
+51126,Canning - I,6825,Canning - I,Approved
+51127,Canning - II,6826,Canning - II,Approved
+51128,Diamond Harbour - I,6827,Diamond Harbour - I,Approved
+51129,Diamond Harbour - II,6828,Diamond Harbour - II,Approved
+51130,Falta,6829,Falta,Approved
+51131,Gosaba,6830,Gosaba,Approved
+51132,Jaynagar - I,6831,Jaynagar - I,Approved
+51133,Jaynagar - II,6832,Jaynagar - II,Approved
+51134,Kakdwip,6833,Kakdwip,Approved
+51135,Kulpi,6834,Kulpi,Approved
+51136,Kultali,6835,Kultali,Approved
+51137,Magrahat - I,6836,Magrahat - I,Approved
+51138,Magrahat - II,6837,Magrahat - II,Approved
+51139,Mandirbazar,6838,Mandirbazar,Approved
+51140,Mathurapur - I,6839,Mathurapur - I,Approved
+51141,Mathurapur - II,6840,Mathurapur - II,Approved
+51142,Namkhana,6841,Namkhana,Approved
+51143,Patharpratima,6842,Patharpratima,Approved
+51144,Sagar,6843,Sagar,Approved
+51145,Sanarpur,6844,Sanarpur,Approved
+51146,Thakurpukur Mahestola,6845,Thakurpukur Mahestola,Approved
+51147,Chopra,6846,Chopra,Approved
+51148,Goalpokher - I,6847,Goalpokher - I,Approved
+51149,Goalpokher - II,6848,Goalpokher - II,Approved
+51150,Hemtabad,6849,Hemtabad,Approved
+51151,Islampur,6850,Islampur,Approved
+51152,Itahar,6851,Itahar,Approved
+51153,Kaliaganj,6852,Kaliaganj,Approved
+61610,Raiganj ,6852,Kaliaganj,Unapproved
+51154,Karandighi,6853,Karandighi,Approved
+51155,Raiganj,6854,Raiganj,Approved
+51156,Car Nicobar,6855,Car Nicobar,Approved
+51157,Great Nicobar,6856,Great Nicobar,Approved
+51158,Nancowry,6857,Nancowry,Approved
+51159,Diglipur,6858,Diglipur,Approved
+51160,Mayabunder,6859,Mayabunder,Approved
+51161,Rangat,6860,Rangat,Approved
+51162,Ferrargunj,6861,Ferrargunj,Approved
+51163,Little Andaman,6862,Little Andaman,Approved
+51164,Port Blair,6863,Port Blair,Approved
+51165,Chandigarh,6864,Chandigarh,Approved
+61665,punjab,6864,Chandigarh,Unapproved
+51166,Dadra & Nagar Haveli,6865,Dadra & Nagar Haveli,Approved
+51167,Daman,6866,Daman,Approved
+51168,Diu,6867,Diu,Approved
+51169,Civil Lines,6868,Civil Lines,Approved
+51170,Karol Bagh,6869,Karol Bagh,Approved
+51171,Kotwali,6870,Kotwali,Approved
+51172,Gandhi Nagar,6871,Gandhi Nagar,Approved
+51173,Mayur Vihar,6872,Mayur Vihar,Approved
+51174,Preet Vihar,6873,Preet Vihar,Approved
+51175,Chanakya Puri,6874,Chanakya Puri,Approved
+51176,Delhi Cantonment,6875,Delhi Cantonment,Approved
+51177,Vasant Vihar,6876,Vasant Vihar,Approved
+51178,Alipur,6877,Alipur,Approved
+51179,Model Town,6878,Model Town,Approved
+51180,Narela,6879,Narela,Approved
+51181,Karawal Nagar,6880,Karawal Nagar,Approved
+51182,Seelam Pur,6881,Seelam Pur,Approved
+51183,Yamuna Vihar,6882,Yamuna Vihar,Approved
+51184,Kanjhawala,6883,Kanjhawala,Approved
+51185,Rohini,6884,Rohini,Approved
+51186,Saraswati Vihar,6885,Saraswati Vihar,Approved
+51187,Seema Puri,6886,Seema Puri,Approved
+51188,Shahdara,6887,Shahdara,Approved
+51189,Vivek Vihar,6888,Vivek Vihar,Approved
+51190,Hauz Khas,6889,Hauz Khas,Approved
+51191,Mehrauli,6890,Mehrauli,Approved
+51192,Saket,6891,Saket,Approved
+51193,Defence Colony,6892,Defence Colony,Approved
+51194,Kalkaji,6893,Kalkaji,Approved
+51195,Sarita Vihar,6894,Sarita Vihar,Approved
+51196,Dwarka,6895,Dwarka,Approved
+51197,Kapeshera,6896,Kapeshera,Approved
+51198,Najafgarh,6897,Najafgarh,Approved
+51199,Patel Nagar,6898,Patel Nagar,Approved
+51200,Punjabi Bagh,6899,Punjabi Bagh,Approved
+51201,Rajouri Garden,6900,Rajouri Garden,Approved
+51202,Anantnag,6901,Anantnag,Approved
+51203,Anantnag East,6902,Anantnag East,Approved
+51204,Bijbehara,6903,Bijbehara,Approved
+51205,Dooru,6904,Dooru,Approved
+51206,Kokernag,6905,Kokernag,Approved
+51207,Larnoo,6906,Larnoo,Approved
+51208,Pahalgam,6907,Pahalgam,Approved
+51209,Qazigund,6908,Qazigund,Approved
+51210,Sallar,6909,Sallar,Approved
+51211,Shahbad Bala,6910,Shahbad Bala,Approved
+51212,Shangus,6911,Shangus,Approved
+51213,Srigufwara,6912,Srigufwara,Approved
+51214,Ajas,6913,Ajas,Approved
+51215,Aloosa,6914,Aloosa,Approved
+51216,Bandipora,6915,Bandipora,Approved
+51217,Gurez,6916,Gurez,Approved
+51218,Hajin,6917,Hajin,Approved
+51219,Sonawari,6918,Sonawari,Approved
+51220,Tulail,6919,Tulail,Approved
+51221,Baramulla,6920,Baramulla,Approved
+51222,Boniyar,6921,Boniyar,Approved
+51223,Dangarpora,6922,Dangarpora,Approved
+51224,Danghiwacha,6923,Danghiwacha,Approved
+51225,Kawarhama,6924,Kawarhama,Approved
+51226,Khoie,6925,Khoie,Approved
+51227,Kreeri,6926,Kreeri,Approved
+51228,Kunzar,6927,Kunzar,Approved
+51229,Narvaw,6928,Narvaw,Approved
+51230,Pattan,6929,Pattan,Approved
+51231,Rafiabad,6930,Rafiabad,Approved
+51232,Singhpora,6931,Singhpora,Approved
+51233,Sopore,6932,Sopore,Approved
+51234,Tangmarg,6933,Tangmarg,Approved
+51235,Uri,6934,Uri,Approved
+51236,Wagoora,6935,Wagoora,Approved
+51237,Watergam,6936,Watergam,Approved
+51238,Zaingeer,6937,Zaingeer,Approved
+51239,Beerwah,6938,Beerwah,Approved
+51240,Bk Pora,6939,Bk Pora,Approved
+51241,Budgam,6940,Budgam,Approved
+51242,Chadoora,6941,Chadoora,Approved
+51243,Charar- E- Shrief,6942,Charar- E- Shrief,Approved
+51244,Khag,6943,Khag,Approved
+51245,Khansahib,6944,Khansahib,Approved
+51246,Magam,6945,Magam,Approved
+51247,Narbal,6946,Narbal,Approved
+51248,Assar,6947,Assar,Approved
+51249,Bhaderwah,6948,Bhaderwah,Approved
+51250,Bhagwah,6949,Bhagwah,Approved
+51251,Bhalessa,6950,Bhalessa,Approved
+51252,Bhalla,6951,Bhalla,Approved
+51253,Bharath Bagla,6952,Bharath Bagla,Approved
+51254,Bhella,6953,Bhella,Approved
+51255,Chilly Pingal,6954,Chilly Pingal,Approved
+51256,Chiralla,6955,Chiralla,Approved
+51257,Doda,6956,Doda,Approved
+51258,Gundna,6957,Gundna,Approved
+51259,Kahara,6958,Kahara,Approved
+51260,Kashtigarh,6959,Kashtigarh,Approved
+51261,Marmat,6960,Marmat,Approved
+51262,Mohalla,6961,Mohalla,Approved
+51263,Phigsoo,6962,Phigsoo,Approved
+51264,Thathri,6963,Thathri,Approved
+51265,Ganderbal,6964,Ganderbal,Approved
+51266,Gund,6965,Gund,Approved
+51267,Kangan,6966,Kangan,Approved
+51268,Lar,6967,Lar,Approved
+51269,Tullamulla Khirbhawani,6968,Tullamulla Khirbhawani,Approved
+51270,Wakoora,6969,Wakoora,Approved
+51271,Akhnoor,6970,Akhnoor,Approved
+51272,Arnia,6971,Arnia,Approved
+51273,Bahu,6972,Bahu,Approved
+51274,Bhalwal,6973,Bhalwal,Approved
+51275,Bishnah,6974,Bishnah,Approved
+51276,Chowki Choura,6975,Chowki Choura,Approved
+51277,Dansal,6976,Dansal,Approved
+51278,Jammu,6977,Jammu,Approved
+51279,Jammu North,6978,Jammu North,Approved
+51280,Jammu South,6979,Jammu South,Approved
+51281,Jammu West,6980,Jammu West,Approved
+51282,Jourian,6981,Jourian,Approved
+51283,Kharah Balli,6982,Kharah Balli,Approved
+51284,Khour,6983,Khour,Approved
+51285,Maira Mandrian,6984,Maira Mandrian,Approved
+51286,Mandal,6985,Mandal,Approved
+51287,Marh,6986,Marh,Approved
+51288,Nagrota,6987,Nagrota,Approved
+51289,Pargwal,6988,Pargwal,Approved
+51290,Ranbir Singh Pura,6989,Ranbir Singh Pura,Approved
+51291,Suchetgarh,6990,Suchetgarh,Approved
+51558,seer,6990,Suchetgarh,Unapproved
+51292,Bani,6991,Bani,Approved
+51293,Basohli,6992,Basohli,Approved
+51294,Billawar,6993,Billawar,Approved
+51295,Dinga Amb,6994,Dinga Amb,Approved
+51296,Hiranagar,6995,Hiranagar,Approved
+51297,Kathua,6996,Kathua,Approved
+51298,Lohai Malhar,6997,Lohai Malhar,Approved
+51299,Mahanpur,6998,Mahanpur,Approved
+51300,Marheen,6999,Marheen,Approved
+51301,Nagri,7000,Nagri,Approved
+51302,Ramkote,7001,Ramkote,Approved
+51303,Atholi (Paddar),7002,Atholi (Paddar),Approved
+51304,Bounjwah,7003,Bounjwah,Approved
+51305,Chhatroo,7004,Chhatroo,Approved
+51306,Dachhan,7005,Dachhan,Approved
+51307,Drabshalla,7006,Drabshalla,Approved
+51308,Kishtwar,7007,Kishtwar,Approved
+51309,Machail,7008,Machail,Approved
+51310,Marwah,7009,Marwah,Approved
+51311,Mughalmaidan,7010,Mughalmaidan,Approved
+51312,Nagseni,7011,Nagseni,Approved
+51313,Warwan,7012,Warwan,Approved
+51314,Devsar,7013,Devsar,Approved
+51315,D H Pora,7014,D H Pora,Approved
+51316,Frisal,7015,Frisal,Approved
+51317,Kulgam,7016,Kulgam,Approved
+51318,Pahloo,7017,Pahloo,Approved
+51319,Qaimoh,7018,Qaimoh,Approved
+51320,Yaripora,7019,Yaripora,Approved
+51321,Drugmulla,7020,Drugmulla,Approved
+51322,Handwara,7021,Handwara,Approved
+51323,Karnah,7022,Karnah,Approved
+51324,Keran,7023,Keran,Approved
+51325,Kralpora,7024,Kralpora,Approved
+51326,Kupwara,7025,Kupwara,Approved
+51327,Lalpora,7026,Lalpora,Approved
+51328,Langate,7027,Langate,Approved
+51329,Lolab,7028,Lolab,Approved
+51330,Machil,7029,Machil,Approved
+51331,Qalamabad,7030,Qalamabad,Approved
+51332,Qaziabad,7031,Qaziabad,Approved
+51333,Ramhal,7032,Ramhal,Approved
+51334,Trehgam,7033,Trehgam,Approved
+51335,Villgam,7034,Villgam,Approved
+51336,Zachaldara,7035,Zachaldara,Approved
+51337,Balakote,7036,Balakote,Approved
+51338,Haveli,7037,Haveli,Approved
+51339,Mandi,7038,Mandi,Approved
+51340,Mankote,7039,Mankote,Approved
+51341,Mendhar,7040,Mendhar,Approved
+51342,Surankote,7041,Surankote,Approved
+51343,Aripal,7042,Aripal,Approved
+51344,Awantipora,7043,Awantipora,Approved
+51345,Kakapora,7044,Kakapora,Approved
+51346,Pampore,7045,Pampore,Approved
+51347,Pulwama,7046,Pulwama,Approved
+51348,Rajpora,7047,Rajpora,Approved
+51349,Shahoora,7048,Shahoora,Approved
+51350,Tral,7049,Tral,Approved
+51351,Beri Pattan,7050,Beri Pattan,Approved
+51352,Darhal,7051,Darhal,Approved
+51353,Kalakote,7052,Kalakote,Approved
+51354,Khawas,7053,Khawas,Approved
+51355,Koteranka,7054,Koteranka,Approved
+51356,Laroka,7055,Laroka,Approved
+51357,Manjakote,7056,Manjakote,Approved
+51358,Nowshera,7057,Nowshera,Approved
+51359,Qila Darhal,7058,Qila Darhal,Approved
+51360,Rajouri,7059,Rajouri,Approved
+51361,Siot,7060,Siot,Approved
+51362,Sundarbani,7061,Sundarbani,Approved
+51363,Taryath,7062,Taryath,Approved
+51364,Thana Mandi,7063,Thana Mandi,Approved
+51365,Banihal,7064,Banihal,Approved
+51366,Batote,7065,Batote,Approved
+51367,Gool,7066,Gool,Approved
+51368,Khari,7067,Khari,Approved
+51369,Pogal Paristan,7068,Pogal Paristan,Approved
+51370,Rajgarh,7069,Rajgarh,Approved
+51371,Ramban,7070,Ramban,Approved
+51372,Ramsoo,7071,Ramsoo,Approved
+51373,Arnas,7072,Arnas,Approved
+51374,Bhomag,7073,Bhomag,Approved
+51375,Chassana,7074,Chassana,Approved
+51376,Katra,7075,Katra,Approved
+51377,Mahore,7076,Mahore,Approved
+51378,Pouni,7077,Pouni,Approved
+51379,Reasi,7078,Reasi,Approved
+51380,Thakrakote,7079,Thakrakote,Approved
+51381,Thuroo,7080,Thuroo,Approved
+51382,Bari Brahamana,7081,Bari Brahamana,Approved
+51383,Ghagwal,7082,Ghagwal,Approved
+51384,Rajpura,7083,Rajpura,Approved
+51385,Ramgarh,7084,Ramgarh,Approved
+51386,Samba,7085,Samba,Approved
+51387,Vijaypur,7086,Vijaypur,Approved
+51388,Barbugh,7087,Barbugh,Approved
+51389,Chitragam,7088,Chitragam,Approved
+51390,Hermain,7089,Hermain,Approved
+51391,Keegam,7090,Keegam,Approved
+51392,Keller,7091,Keller,Approved
+51393,Shopian,7092,Shopian,Approved
+51394,Zainapora,7093,Zainapora,Approved
+51395,Channapora,7094,Channapora,Approved
+51396,Eidgah,7095,Eidgah,Approved
+51397,Khanyar,7096,Khanyar,Approved
+51398,Panthachowk,7097,Panthachowk,Approved
+51399,Srinagar Central,7098,Srinagar Central,Approved
+51400,Srinagar (North),7099,Srinagar (North),Approved
+51401,Srinagar (South),7100,Srinagar (South),Approved
+51402,Basantgarh,7101,Basantgarh,Approved
+51403,Chenani,7102,Chenani,Approved
+51404,Latti,7103,Latti,Approved
+51405,Majalta,7104,Majalta,Approved
+51406,Moungri,7105,Moungri,Approved
+51407,Panchari,7106,Panchari,Approved
+51408,Ramnagar,7107,Ramnagar,Approved
+51409,Udhampur,7108,Udhampur,Approved
+51410,Agatti,7109,Agatti,Approved
+51411,Amini,7110,Amini,Approved
+51412,Andrott,7111,Andrott,Approved
+51413,Bitra,7112,Bitra,Approved
+51414,Chetlat,7113,Chetlat,Approved
+51415,Kadmat,7114,Kadmat,Approved
+51416,Kalpeni,7115,Kalpeni,Approved
+51417,Kavaratti,7116,Kavaratti,Approved
+51418,Kiltan,7117,Kiltan,Approved
+51419,Minicoy,7118,Minicoy,Approved
+51420,Karaikal Taluk,7119,Karaikal Taluk,Approved
+51421,Thirunallar Taluk,7120,Thirunallar Taluk,Approved
+51422,Mahe Taluk,7121,Mahe Taluk,Approved
+51423,Bahour Taluk,7122,Bahour Taluk,Approved
+51424,Ozhukarai Taluk,7123,Ozhukarai Taluk,Approved
+51425,Puducherry Taluk,7124,Puducherry Taluk,Approved
+51426,Villianur Taluk,7125,Villianur Taluk,Approved
+51427,Yanam Taluk,7126,Yanam Taluk,Approved
+51428,Drass,7127,Drass,Approved
+51429,Kargil,7128,Kargil,Approved
+51430,Sankoo,7129,Sankoo,Approved
+51431,Shakar Chiktan,7130,Shakar Chiktan,Approved
+51432,Shergole,7131,Shergole,Approved
+51433,Taisuru,7132,Taisuru,Approved
+51434,Zanskar,7133,Zanskar,Approved
+51435,Diskit,7134,Diskit,Approved
+51436,Durbuk,7135,Durbuk,Approved
+51437,Khaltsi,7136,Khaltsi,Approved
+51438,Kharu,7137,Kharu,Approved
+51439,Leh,7138,Leh,Approved
+51440,Nyoma,7139,Nyoma,Approved
+51441,Saspol,7140,Saspol,Approved
+51442,Sumoor,7141,Sumoor,Approved
+51443,Mumbai City,7142,Mumbai,Approved
+61865,Virar West,7142,Mumbai,Unapproved
+51444,Unmapped,7143,Unmapped,Approved

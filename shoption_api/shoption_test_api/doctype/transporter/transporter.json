@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{transporter}",
+ "creation": "2025-12-10 13:23:58.872924",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "transporter",
+  "supplier_name",
+  "column_break_nyld",
+  "company",
+  "section_break_jamv",
+  "district",
+  "section_break_elkj",
+  "tahsil",
+  "section_break_nkeu",
+  "marketplace"
+ ],
+ "fields": [
+  {
+   "fieldname": "transporter",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Transporter",
+   "link_filters": "[[\"Supplier\",\"is_transporter\",\"=\",1]]",
+   "options": "Supplier",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_jamv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Table",
+   "label": "District",
+   "options": "Transporter District"
+  },
+  {
+   "fieldname": "section_break_elkj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tahsil",
+   "fieldtype": "Table",
+   "label": "Tahsil",
+   "options": "Transporter Tahsil"
+  },
+  {
+   "fieldname": "section_break_nkeu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "marketplace",
+   "fieldtype": "Table",
+   "label": "Marketplace",
+   "options": "Transporter Marketplace"
+  },
+  {
+   "fieldname": "column_break_nyld",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fetch_from": "transporter.supplier_name",
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Supplier Name"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-10 21:11:44.946621",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Transporter",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

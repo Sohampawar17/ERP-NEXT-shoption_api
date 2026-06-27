@@ -1,0 +1,202 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{view_dealership}-{##}",
+ "creation": "2026-01-29 14:35:14.579748",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_yvql",
+  "view_dealership",
+  "customer",
+  "customer_name",
+  "customer_mobile_no",
+  "column_break_uxoa",
+  "created_on",
+  "deposit_date",
+  "utr__check_no",
+  "column_break_amdk",
+  "plan_deposit_amount",
+  "deposit_amount",
+  "deposit_slip_attachment",
+  "section_break_xcks",
+  "bank_transaction_id",
+  "slip_attach",
+  "company_bank_account",
+  "column_break_cinp",
+  "approval_date",
+  "approval_amount",
+  "section_break_ijmb",
+  "remark",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_yvql",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Deposit Amount Payment Approal",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "bank_transaction_id",
+   "fieldtype": "Data",
+   "label": "Bank Transaction ID"
+  },
+  {
+   "fieldname": "approval_date",
+   "fieldtype": "Date",
+   "label": "Approval Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "slip_attach",
+   "fieldtype": "Attach",
+   "label": "Slip Attach",
+   "make_attachment_public": 1
+  },
+  {
+   "fieldname": "view_dealership",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "View Dealership",
+   "options": "Apply Dealership",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "approval_amount",
+   "fieldtype": "Currency",
+   "label": "Approval Amount"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  },
+  {
+   "fetch_from": "view_dealership.dealer_id",
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "label": "Customer"
+  },
+  {
+   "fetch_from": "view_dealership.name1",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer Name"
+  },
+  {
+   "fetch_from": "view_dealership.mobile_number",
+   "fieldname": "customer_mobile_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer Mobile No."
+  },
+  {
+   "fieldname": "section_break_ijmb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "now",
+   "fieldname": "created_on",
+   "fieldtype": "Datetime",
+   "label": "Created On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_uxoa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xcks",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_cinp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company_bank_account",
+   "fieldtype": "Link",
+   "label": "Company Bank Account",
+   "link_filters": "[[\"Bank Account\",\"is_company_account\",\"=\",1],[\"Bank Account\",\"disabled\",\"=\",0]]",
+   "options": "Bank Account"
+  },
+  {
+   "fetch_from": "view_dealership.plan_deposit_amount",
+   "fieldname": "plan_deposit_amount",
+   "fieldtype": "Currency",
+   "label": "Plan Deposit Amount"
+  },
+  {
+   "fetch_from": "view_dealership.deposit_amount",
+   "fieldname": "deposit_amount",
+   "fieldtype": "Currency",
+   "label": "Deposit Amount"
+  },
+  {
+   "fetch_from": "view_dealership.current_date",
+   "fieldname": "deposit_date",
+   "fieldtype": "Datetime",
+   "label": "Deposit Date"
+  },
+  {
+   "fetch_from": "view_dealership.utr_check_no",
+   "fieldname": "utr__check_no",
+   "fieldtype": "Data",
+   "label": "UTR / Check No."
+  },
+  {
+   "fetch_from": "view_dealership.slip_attach",
+   "fieldname": "deposit_slip_attachment",
+   "fieldtype": "Attach",
+   "label": "Deposit Slip Attachment"
+  },
+  {
+   "fieldname": "column_break_amdk",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "make_attachments_public": 1,
+ "modified": "2026-04-14 13:02:25.475705",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Deposit Amount Payment Approal",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

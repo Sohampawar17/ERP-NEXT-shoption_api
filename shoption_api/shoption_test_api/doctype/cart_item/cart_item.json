@@ -1,0 +1,170 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-08 12:35:41.284930",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item",
+  "brand",
+  "checkout",
+  "image",
+  "column_break_qjlm",
+  "item_name",
+  "gst_hsn_code",
+  "oem_code",
+  "section_break_rhcs",
+  "description",
+  "section_break_zepc",
+  "quantity",
+  "uom",
+  "selling_price_list",
+  "min_qty",
+  "column_break_bcps",
+  "rate",
+  "rate_with_gst",
+  "amount",
+  "discount",
+  "is_moq_applicable"
+ ],
+ "fields": [
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "item.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount"
+  },
+  {
+   "fetch_from": "item.description",
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "column_break_qjlm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_rhcs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_zepc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_bcps",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "item.brand",
+   "fieldname": "brand",
+   "fieldtype": "Link",
+   "label": "Brand",
+   "options": "Brand"
+  },
+  {
+   "fetch_from": "item.gst_hsn_code",
+   "fieldname": "gst_hsn_code",
+   "fieldtype": "Data",
+   "label": "HSN/SAC"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "link_filters": "[[\"UOM\",\"enabled\",\"=\",1]]",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "selling_price_list",
+   "fieldtype": "Link",
+   "label": "Selling Price List",
+   "link_filters": "[[\"Price List\",\"selling\",\"=\",1]]",
+   "options": "Price List"
+  },
+  {
+   "fetch_from": "item.custom_oem_code",
+   "fetch_if_empty": 1,
+   "fieldname": "oem_code",
+   "fieldtype": "Data",
+   "label": "OEM Code"
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Currency",
+   "label": "Discount"
+  },
+  {
+   "default": "0",
+   "fieldname": "checkout",
+   "fieldtype": "Check",
+   "label": "Checkout"
+  },
+  {
+   "fetch_from": "item.custom_image_1",
+   "fieldname": "image",
+   "fieldtype": "Data",
+   "label": "Image"
+  },
+  {
+   "fieldname": "min_qty",
+   "fieldtype": "Float",
+   "label": "Min Qty"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_moq_applicable",
+   "fieldtype": "Check",
+   "label": "Is MOQ Applicable"
+  },
+  {
+   "fieldname": "rate_with_gst",
+   "fieldtype": "Float",
+   "label": "Rate With Gst"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-12-18 11:47:20.945261",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Cart Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

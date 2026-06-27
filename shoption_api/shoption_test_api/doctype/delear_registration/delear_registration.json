@@ -1,0 +1,357 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-11-26 15:44:46.171650",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_nwjy",
+  "amended_from",
+  "from_document",
+  "party_name",
+  "column_break_qtpw",
+  "gst_verified",
+  "mode",
+  "column_break_vwrp",
+  "naming_series",
+  "is_completed",
+  "section_break_fqwo",
+  "shop_name",
+  "column_break_jjlr",
+  "mobile_number",
+  "column_break_srbn",
+  "email_id",
+  "section_break_fhba",
+  "address_line_1",
+  "address_line_2",
+  "marketplace",
+  "column_break_qpkp",
+  "tahshil",
+  "district",
+  "state",
+  "country",
+  "pincode",
+  "registration_type_section",
+  "column_break_kcaa",
+  "column_break_uwxx",
+  "register_type",
+  "column_break_jixm",
+  "gst_manually_section",
+  "send_otp",
+  "enter_otp",
+  "verify",
+  "column_break_hvel",
+  "shop_front_photo",
+  "visiting_card",
+  "passbook_or_checkbook",
+  "gst_section",
+  "gst_no",
+  "gst_number",
+  "column_break_gadh",
+  "gst_certificate",
+  "section_break_koik",
+  "remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_nwjy",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Delear Registration",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "from_document",
+   "fieldtype": "Link",
+   "label": "From Document",
+   "options": "Lead"
+  },
+  {
+   "fieldname": "column_break_qtpw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "from_document.mobile_no",
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Mobile Number",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_vwrp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "from_document.first_name",
+   "fieldname": "party_name",
+   "fieldtype": "Data",
+   "label": "Party Name"
+  },
+  {
+   "fieldname": "section_break_fhba",
+   "fieldtype": "Section Break",
+   "label": "Dealer's Address"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "label": "State",
+   "options": "Territory"
+  },
+  {
+   "fieldname": "column_break_qpkp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "label": "District",
+   "options": "District"
+  },
+  {
+   "fieldname": "tahshil",
+   "fieldtype": "Link",
+   "label": "Tahshil",
+   "options": "Tahshil"
+  },
+  {
+   "fieldname": "marketplace",
+   "fieldtype": "Link",
+   "label": "Marketplace",
+   "options": "Marketplace"
+  },
+  {
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "label": "Pincode"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Small Text",
+   "label": "Address Line 1"
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "registration_type_section",
+   "fieldtype": "Section Break",
+   "label": "Registration Type"
+  },
+  {
+   "fieldname": "column_break_kcaa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_uwxx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "register_type",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Register Type",
+   "options": "\nI can provide GST OTP\nI am unable to provide GST OTP\nI do not have GST"
+  },
+  {
+   "fieldname": "column_break_jixm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.mode==2",
+   "fieldname": "gst_section",
+   "fieldtype": "Section Break",
+   "label": "GST"
+  },
+  {
+   "depends_on": "eval:doc.register_type == \"I can provide GST OTP\"",
+   "fieldname": "gst_number",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "GST Number"
+  },
+  {
+   "fieldname": "column_break_gadh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gst_certificate",
+   "fieldtype": "Attach Image",
+   "label": "GST Certificate"
+  },
+  {
+   "fieldname": "shop_front_photo",
+   "fieldtype": "Attach Image",
+   "label": "Shop Front Photo"
+  },
+  {
+   "fieldname": "visiting_card",
+   "fieldtype": "Attach Image",
+   "label": "Visiting Card"
+  },
+  {
+   "fieldname": "passbook_or_checkbook",
+   "fieldtype": "Attach Image",
+   "label": "Passbook Or Checkbook"
+  },
+  {
+   "fieldname": "gst_manually_section",
+   "fieldtype": "Section Break",
+   "label": "Gst Manually"
+  },
+  {
+   "fieldname": "gst_no",
+   "fieldtype": "Data",
+   "label": "GST Number"
+  },
+  {
+   "fieldname": "send_otp",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Send OTP"
+  },
+  {
+   "fieldname": "column_break_hvel",
+   "fieldtype": "Column Break",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "enter_otp",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Enter OTP"
+  },
+  {
+   "fieldname": "verify",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Verify"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "DR/.YY./"
+  },
+  {
+   "fieldname": "section_break_fqwo",
+   "fieldtype": "Section Break",
+   "label": "Shop Details"
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_if_empty": 1,
+   "fieldname": "shop_name",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Shop Name"
+  },
+  {
+   "fieldname": "column_break_jjlr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "from_document.email_id",
+   "fetch_if_empty": 1,
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_completed",
+   "fieldtype": "Check",
+   "label": "Is Completed",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "gst_verified",
+   "fieldtype": "Check",
+   "label": "Gst Verified"
+  },
+  {
+   "fieldname": "mode",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Mode",
+   "options": "1\n2\n3"
+  },
+  {
+   "fieldname": "column_break_srbn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_koik",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Data",
+   "label": "remark"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Customer",
+   "link_fieldname": "custom_document_value"
+  }
+ ],
+ "modified": "2026-06-18 11:43:01.241251",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Delear Registration",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "shop_name,mobile_number",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

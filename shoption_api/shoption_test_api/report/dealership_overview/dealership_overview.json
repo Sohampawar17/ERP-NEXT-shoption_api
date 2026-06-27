@@ -1,0 +1,40 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-05-22 18:19:07.208856",
+ "disabled": 1,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2026-05-22 19:22:12.633459",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Dealership Overview",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Apply Dealership",
+ "report_name": "Dealership Overview",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Payment Entry Approver"
+  },
+  {
+   "role": "Dealership Manager"
+  },
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Dealer"
+  },
+  {
+   "role": "Farmer"
+  }
+ ],
+ "timeout": 0
+}

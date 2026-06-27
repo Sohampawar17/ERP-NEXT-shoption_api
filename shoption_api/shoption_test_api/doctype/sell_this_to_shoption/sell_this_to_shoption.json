@@ -1,0 +1,129 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-12-01 15:13:31.851830",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "price_rate",
+  "quantity_available",
+  "dispatch_location",
+  "brand_discount",
+  "naming_series",
+  "column_break_tbxi",
+  "user_id",
+  "customer_id",
+  "customer_name",
+  "state",
+  "district",
+  "tahshil"
+ ],
+ "fields": [
+  {
+   "fieldname": "price_rate",
+   "fieldtype": "Currency",
+   "label": "Price Rate"
+  },
+  {
+   "fieldname": "quantity_available",
+   "fieldtype": "Float",
+   "label": "Quantity Available"
+  },
+  {
+   "fieldname": "dispatch_location",
+   "fieldtype": "Data",
+   "label": "Dispatch Location"
+  },
+  {
+   "fieldname": "brand_discount",
+   "fieldtype": "Percent",
+   "label": "Brand Discount"
+  },
+  {
+   "fieldname": "column_break_tbxi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "user_id",
+   "fieldtype": "Link",
+   "label": "User ID",
+   "options": "User"
+  },
+  {
+   "fieldname": "customer_id",
+   "fieldtype": "Link",
+   "label": "Customer ID",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "customer_id.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Data",
+   "label": "District"
+  },
+  {
+   "fieldname": "tahshil",
+   "fieldtype": "Data",
+   "label": "Tahshil"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "STS/.####"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item code",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-12 14:53:38.541107",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Sell This to Shoption",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

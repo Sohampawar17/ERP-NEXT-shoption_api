@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-22 21:26:23.114936",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "txnid",
+  "payload",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "txnid",
+   "fieldtype": "Data",
+   "label": "txnid"
+  },
+  {
+   "fieldname": "payload",
+   "fieldtype": "Code",
+   "label": "payload"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "status"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-22 21:27:10.979655",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "PayU Webhook Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

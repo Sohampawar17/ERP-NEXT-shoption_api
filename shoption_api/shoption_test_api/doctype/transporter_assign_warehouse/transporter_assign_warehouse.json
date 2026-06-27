@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{transporter}-{warehouse}",
+ "creation": "2025-12-12 15:10:39.915708",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "transporter",
+  "warehouse"
+ ],
+ "fields": [
+  {
+   "fieldname": "transporter",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "transporter",
+   "link_filters": "[[\"Supplier\",\"is_transporter\",\"=\",1],[\"Supplier\",\"disabled\",\"=\",0]]",
+   "options": "Supplier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Warehouse",
+   "link_filters": "[[\"Warehouse\",\"custom_is_mobile_app_warehouse\",\"=\",1],[\"Warehouse\",\"disabled\",\"=\",0]]",
+   "options": "Warehouse",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-12 15:23:42.970179",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Transporter Assign Warehouse",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

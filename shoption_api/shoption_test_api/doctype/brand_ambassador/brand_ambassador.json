@@ -1,0 +1,138 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-05-19 22:21:26.535230",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_xnjk",
+  "naming_series",
+  "section_break_wpna",
+  "customer",
+  "customer_name",
+  "mobile_number",
+  "customer_group",
+  "column_break_wrsc",
+  "joining_date",
+  "active",
+  "section_break_rhio",
+  "warrior",
+  "column_break_kwkg",
+  "warrior_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_xnjk",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "BA-.YYYY.-.#####"
+  },
+  {
+   "fieldname": "section_break_wpna",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fetch_from": "customer.mobile_no",
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Mobile Number"
+  },
+  {
+   "fetch_from": "customer.customer_group",
+   "fieldname": "customer_group",
+   "fieldtype": "Data",
+   "label": "Customer Group"
+  },
+  {
+   "fieldname": "column_break_wrsc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "joining_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Joining Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Active"
+  },
+  {
+   "fieldname": "section_break_rhio",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "warrior",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Warrior",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_kwkg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "warrior.full_name",
+   "fieldname": "warrior_name",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Warrior Name"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-19 22:21:26.535230",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Brand Ambassador",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

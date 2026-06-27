@@ -1,0 +1,153 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-12-10 11:20:28.077027",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "categopry_master",
+  "plan_logo",
+  "dealership_category_name",
+  "dealership_plan_name",
+  "column_break_frqm",
+  "plan_description",
+  "section_break_hzgc",
+  "plan_type",
+  "plan_coverage",
+  "column_break_bpda",
+  "deposite_amount",
+  "first_order_value",
+  "column_break_sgik",
+  "annual_target",
+  "section_break_azya",
+  "dealership_plan_range"
+ ],
+ "fields": [
+  {
+   "fieldname": "dealership_plan_name",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Dealership plan name"
+  },
+  {
+   "fieldname": "section_break_hzgc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "plan_type",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "label": "Plan type",
+   "options": "Exclusive\nNon-Exclusive"
+  },
+  {
+   "fieldname": "plan_coverage",
+   "fieldtype": "Select",
+   "label": "Plan coverage",
+   "options": "District\nTehsils\nMarketplaces"
+  },
+  {
+   "fieldname": "deposite_amount",
+   "fieldtype": "Float",
+   "label": "Deposite amount"
+  },
+  {
+   "fieldname": "first_order_value",
+   "fieldtype": "Float",
+   "label": "First order value"
+  },
+  {
+   "fieldname": "annual_target",
+   "fieldtype": "Float",
+   "label": "Annual target"
+  },
+  {
+   "fieldname": "plan_description",
+   "fieldtype": "Data",
+   "label": "plan description"
+  },
+  {
+   "fieldname": "plan_logo",
+   "fieldtype": "Attach Image",
+   "label": "Plan Logo"
+  },
+  {
+   "fieldname": "column_break_frqm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bpda",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "DLP/.YY./.#####"
+  },
+  {
+   "fetch_from": "categopry_master.dealership_category_name",
+   "fieldname": "dealership_category_name",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Dealership Category Name"
+  },
+  {
+   "fieldname": "dealership_plan_range",
+   "fieldtype": "Table",
+   "label": "Dealership Plan Range",
+   "options": "Dealership Plan Range"
+  },
+  {
+   "fieldname": "column_break_sgik",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_azya",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "dealership_category.dealership_category_name",
+   "fieldname": "categopry_master",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Categopry master",
+   "options": "Dealership Category Master"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-26 19:49:31.460366",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Dealership Plan",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "dealership_plan_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

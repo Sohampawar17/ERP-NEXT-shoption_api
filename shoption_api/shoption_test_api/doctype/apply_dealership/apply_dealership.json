@@ -1,0 +1,856 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-12-10 14:48:32.463733",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "dealership_type",
+  "naming_series",
+  "column_break_ruby",
+  "delership_plan",
+  "column_break_olxb",
+  "dealership_plan_name",
+  "dealership_target",
+  "area_section",
+  "state",
+  "district",
+  "column_break_fqcz",
+  "tehsil",
+  "column_break_kqls",
+  "marketplaces",
+  "shop_details_section",
+  "dealer_shop_info_column",
+  "dealer_id",
+  "shop_name",
+  "machinery",
+  "ksk",
+  "consumable",
+  "other",
+  "other_data",
+  "column_break_mcev",
+  "country",
+  "state_",
+  "district_",
+  "tehsil_",
+  "marketplace",
+  "pincode",
+  "address",
+  "column_break_iviu",
+  "shop_opening_year",
+  "employee_number",
+  "have_godown",
+  "godown_size",
+  "gst_number",
+  "primary_bank_name",
+  "last_year_turnover",
+  "section_break_hacy",
+  "owner_details_column",
+  "name1",
+  "mobile_number",
+  "whatsapp",
+  "column_break_pjre",
+  "dob",
+  "pan",
+  "column_break_lrjy",
+  "gst_certificate",
+  "owner_pan",
+  "passport_photo",
+  "column_break_atqs",
+  "shop_photograph",
+  "owner_aadhar",
+  "address_proof",
+  "section_break_radm",
+  "column_break_wmcf",
+  "token_yantra",
+  "mulching",
+  "tarapaulin",
+  "tools",
+  "column_break_agwu",
+  "capacitor",
+  "kitkat",
+  "drip",
+  "column_break_tcnk",
+  "motor_pump",
+  "pipe",
+  "starters",
+  "column_break_dcgx",
+  "rope",
+  "spray_pump",
+  "cables_wires",
+  "terms_and_conditions_section",
+  "shop_name_as_gst",
+  "column_break_qkah",
+  "authorized_person_name",
+  "column_break_aqof",
+  "place",
+  "column_break_xlkg",
+  "date",
+  "tab_2_tab",
+  "approval_status",
+  "form_status",
+  "column_break_aqkw",
+  "valid_from",
+  "valid_to",
+  "manager_process_section",
+  "plan_deposit_amount",
+  "current_date",
+  "column_break_qfux",
+  "deposit_amount",
+  "utr_check_no",
+  "column_break_lzuz",
+  "slip_attach",
+  "account_process_section",
+  "approved_amount",
+  "bank_transaction_id",
+  "column_break_pbej",
+  "remark",
+  "approval_date",
+  "column_break_imlu",
+  "attach_slip",
+  "override",
+  "account_override_datetime",
+  "dealership_manager_section",
+  "first_order_value",
+  "dealership_sales_order",
+  "section_break_mpiu",
+  "total_paid_order_amount",
+  "column_break_pnim",
+  "order_override",
+  "first_order_override",
+  "section_break_gzhe",
+  "dealership_aggrement",
+  "certificate",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "dealership_type",
+   "fieldtype": "Link",
+   "in_preview": 1,
+   "label": "Dealership Type",
+   "options": "Dealership Category Master",
+   "read_only": 1
+  },
+  {
+   "fieldname": "area_section",
+   "fieldtype": "Section Break",
+   "label": "Area"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "label": "State",
+   "options": "Territory",
+   "read_only": 1
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "label": "District",
+   "options": "District",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tehsil",
+   "fieldtype": "Table",
+   "label": "Tehsil",
+   "options": "Dealership Plan Tehsil"
+  },
+  {
+   "fieldname": "marketplaces",
+   "fieldtype": "Table",
+   "label": "Marketplaces",
+   "options": "Dealership Plan Marketplace"
+  },
+  {
+   "fieldname": "shop_details_section",
+   "fieldtype": "Section Break",
+   "label": "Shop details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "dealer_id",
+   "fieldtype": "Link",
+   "label": "Dealer id ",
+   "options": "Delear Registration",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_mcev",
+   "fieldtype": "Column Break",
+   "label": "Dealer's Address",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "dealer_id.country",
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "dealer_id.pincode",
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "label": "Pincode",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "dealer_id.state",
+   "fieldname": "state_",
+   "fieldtype": "Link",
+   "label": "State",
+   "options": "Territory",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "dealer_id.district",
+   "fieldname": "district_",
+   "fieldtype": "Link",
+   "label": "District",
+   "options": "District",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "dealer_id.tahshil",
+   "fieldname": "tehsil_",
+   "fieldtype": "Link",
+   "label": "Tehsil",
+   "options": "Tahshil",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "dealer_id.marketplace",
+   "fieldname": "marketplace",
+   "fieldtype": "Link",
+   "label": "Marketplace",
+   "options": "Marketplace",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "dealer_id.address_line_1",
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shop_opening_year",
+   "fieldtype": "Int",
+   "label": "Shop opening year",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "have_godown",
+   "fieldtype": "Check",
+   "label": "have godown",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gst_number",
+   "fieldtype": "Data",
+   "label": "GST Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_bank_name",
+   "fieldtype": "Data",
+   "label": "Primary Bank Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_year_turnover",
+   "fieldtype": "Float",
+   "label": "Last year turnover",
+   "read_only": 1
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "whatsapp",
+   "fieldtype": "Data",
+   "label": "Whatsapp  ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pan",
+   "fieldtype": "Data",
+   "label": "PAN",
+   "read_only": 1
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "DOB",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_hacy",
+   "fieldtype": "Section Break",
+   "label": "Required Documents",
+   "read_only": 1
+  },
+  {
+   "fieldname": "owner_details_column",
+   "fieldtype": "Column Break",
+   "label": "Owner details"
+  },
+  {
+   "fieldname": "motor_pump",
+   "fieldtype": "Data",
+   "label": "Motor Pump",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pipe",
+   "fieldtype": "Data",
+   "label": "Pipe",
+   "read_only": 1
+  },
+  {
+   "fieldname": "starters",
+   "fieldtype": "Data",
+   "label": "Starters",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cables_wires",
+   "fieldtype": "Data",
+   "label": "Cables wires",
+   "read_only": 1
+  },
+  {
+   "fieldname": "spray_pump",
+   "fieldtype": "Data",
+   "label": "Spray pump",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rope",
+   "fieldtype": "Data",
+   "label": "Rope",
+   "read_only": 1
+  },
+  {
+   "fieldname": "capacitor",
+   "fieldtype": "Data",
+   "label": "Capacitor",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_radm",
+   "fieldtype": "Section Break",
+   "label": "Present Dealership",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gst_certificate",
+   "fieldtype": "Attach",
+   "label": "GST Certificate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "owner_pan",
+   "fieldtype": "Attach",
+   "label": "Owner PAN",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wmcf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "owner_aadhar",
+   "fieldtype": "Attach",
+   "label": "Owner Aadhar",
+   "read_only": 1
+  },
+  {
+   "fieldname": "address_proof",
+   "fieldtype": "Attach",
+   "label": "Address proof",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ruby",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "delership_plan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Delership plan",
+   "options": "Dealership Plan",
+   "read_only": 1
+  },
+  {
+   "fieldname": "dealer_shop_info_column",
+   "fieldtype": "Column Break",
+   "label": "Dealer' Shop info"
+  },
+  {
+   "fetch_from": "dealer_id.shop_name",
+   "fieldname": "shop_name",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Shop name",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "machinery",
+   "fieldtype": "Check",
+   "label": "Machinery",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "ksk",
+   "fieldtype": "Check",
+   "label": "KSK",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "consumable",
+   "fieldtype": "Check",
+   "label": "Consumable",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "other",
+   "fieldtype": "Check",
+   "label": "Other",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_iviu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "employee_number",
+   "fieldtype": "Int",
+   "label": "Employee number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_lrjy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "passport_photo",
+   "fieldtype": "Attach",
+   "label": "Passport photo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shop_photograph",
+   "fieldtype": "Attach",
+   "label": "Shop Photograph",
+   "read_only": 1
+  },
+  {
+   "fieldname": "token_yantra",
+   "fieldtype": "Data",
+   "label": "Token Yantra",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mulching",
+   "fieldtype": "Data",
+   "label": "Mulching",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tarapaulin",
+   "fieldtype": "Data",
+   "label": "Tarapaulin",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tools",
+   "fieldtype": "Data",
+   "label": "Tools",
+   "read_only": 1
+  },
+  {
+   "fieldname": "drip",
+   "fieldtype": "Data",
+   "label": "Drip",
+   "read_only": 1
+  },
+  {
+   "fieldname": "kitkat",
+   "fieldtype": "Data",
+   "label": "Kitkat",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_tcnk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "terms_and_conditions_section",
+   "fieldtype": "Section Break",
+   "label": "Terms And Conditions"
+  },
+  {
+   "fieldname": "shop_name_as_gst",
+   "fieldtype": "Data",
+   "label": "Shop Name As GST",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qkah",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "authorized_person_name",
+   "fieldtype": "Data",
+   "label": "Authorized Person Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_aqof",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "place",
+   "fieldtype": "Data",
+   "label": "place",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xlkg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "ADL-"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Approval Process"
+  },
+  {
+   "fieldname": "valid_from",
+   "fieldtype": "Datetime",
+   "label": "Valid From"
+  },
+  {
+   "fieldname": "valid_to",
+   "fieldtype": "Datetime",
+   "label": "Valid To"
+  },
+  {
+   "fieldname": "approval_status",
+   "fieldtype": "Select",
+   "label": "Approval Status",
+   "options": "Pending for Review\nPending for Activation\nPending for Approval\nOverride\nActive",
+   "read_only": 1
+  },
+  {
+   "fieldname": "deposit_amount",
+   "fieldtype": "Float",
+   "in_preview": 1,
+   "label": "Deposit Amount",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "utr_check_no",
+   "fieldtype": "Data",
+   "in_preview": 1,
+   "label": "UTR / Check No",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "delership_plan.deposite_amount",
+   "fieldname": "plan_deposit_amount",
+   "fieldtype": "Float",
+   "in_preview": 1,
+   "label": "Plan Deposit Amount",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_qfux",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "slip_attach",
+   "fieldtype": "Attach",
+   "in_preview": 1,
+   "label": "Deposit Slip Attachment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "manager_process_section",
+   "fieldtype": "Section Break",
+   "label": "Manager Process"
+  },
+  {
+   "fieldname": "column_break_lzuz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "account_process_section",
+   "fieldtype": "Section Break",
+   "label": "Account Process"
+  },
+  {
+   "fieldname": "bank_transaction_id",
+   "fieldtype": "Data",
+   "label": "Bank Transaction ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Data",
+   "label": "Remark",
+   "read_only": 1
+  },
+  {
+   "fieldname": "attach_slip",
+   "fieldtype": "Attach",
+   "label": "Attach Slip",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_aqkw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dealership_manager_section",
+   "fieldtype": "Section Break",
+   "label": "Dealership Manager"
+  },
+  {
+   "fieldname": "column_break_pbej",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_imlu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "other_data",
+   "fieldtype": "Data",
+   "label": "Other data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "godown_size",
+   "fieldtype": "Data",
+   "label": "Godown size",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_amount",
+   "fieldtype": "Float",
+   "label": "Approved amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "current_date",
+   "fieldtype": "Datetime",
+   "in_preview": 1,
+   "label": "Current Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approval_date",
+   "fieldtype": "Datetime",
+   "label": "Approval Date",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "delership_plan.first_order_value",
+   "fieldname": "first_order_value",
+   "fieldtype": "Float",
+   "label": "First Order value"
+  },
+  {
+   "fetch_from": "delership_plan.dealership_plan_name",
+   "fieldname": "dealership_plan_name",
+   "fieldtype": "Data",
+   "in_preview": 1,
+   "label": "Dealership plan name"
+  },
+  {
+   "fieldname": "dealership_sales_order",
+   "fieldtype": "Table",
+   "label": "Dealership's orders",
+   "options": "dealership sales order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_gzhe",
+   "fieldtype": "Section Break",
+   "read_only": 1
+  },
+  {
+   "fieldname": "dealership_aggrement",
+   "fieldtype": "Attach",
+   "label": "Dealership aggrement ",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "Dealership Deposit",
+   "fieldname": "form_status",
+   "fieldtype": "Select",
+   "label": "Form Status",
+   "options": "Dealership Deposit\nFirst Order\nAggreement",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Apply Dealership",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "override",
+   "fieldtype": "Check",
+   "label": "override"
+  },
+  {
+   "fetch_from": "delership_plan.annual_target",
+   "fieldname": "dealership_target",
+   "fieldtype": "Float",
+   "label": "Dealership Target"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "certificate",
+   "fieldtype": "Attach",
+   "label": "Certificate",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_paid_order_amount",
+   "fieldtype": "Float",
+   "label": "Total Paid Order Amount ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_mpiu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_pnim",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "order_override",
+   "fieldtype": "Check",
+   "label": "Order Override"
+  },
+  {
+   "fieldname": "column_break_olxb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_fqcz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_kqls",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_pjre",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_atqs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_agwu",
+   "fieldtype": "Column Break",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_dcgx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "account_override_datetime",
+   "fieldtype": "Datetime",
+   "label": "Account Override datetime",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "first_order_override",
+   "fieldtype": "Datetime",
+   "label": "First Order Override",
+   "no_copy": 1,
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "make_attachments_public": 1,
+ "modified": "2026-06-24 17:32:46.958763",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Apply Dealership",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

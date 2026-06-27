@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{tahsil_id}",
+ "creation": "2025-11-21 14:42:27.954503",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tahshil",
+  "district",
+  "tahsil_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "tahshil",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tahshil",
+   "reqd": 1
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "District",
+   "options": "District",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tahsil_id",
+   "fieldtype": "Data",
+   "label": "Tahsil Id"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-24 17:48:10.003236",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Tahshil",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "tahshil",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "tahshil"
+}

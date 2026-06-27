@@ -1,0 +1,274 @@
+import frappe
+from frappe import _
+
+        cust = customer[0]
+
+        # 2️⃣ Fetch marketplace child table data
+        assigned = frappe.get_all(
+            "Marketplace Assignment",
+            filters={"parent": cust.name},
+            fields=["marketplace"]
+        )
+
+        return {
+            "status": True,
+            "exists": True,
+            "mobile_no": mobile_no,
+            "profile_status": cust.custom_profile_status,
+            "gst_status": cust.custom_gst_status,
+            "dealer_status": cust.custom_dealer_status,
+            "product_access": cust.custom_product_access,
+            "marketplaces_assigned": assigned,
+            "message": "Existing dealer fetched"
+        }
+
+    # 3️⃣ New customer entry
+    new_cust = frappe.get_doc({
+        "doctype": "Customer",
+        "customer_name": mobile_no,
+        "mobile_no": mobile_no,
+        "customer_group": "Individual",
+        "territory": "All Territories",
+        "custom_profile_status": 0,
+        "custom_get_status": "Pending",
+        "custom_dealer_status": "Pending",
+        "custom_product_access": 0
+    })
+
+    new_cust.insert(ignore_permissions=True)
+    frappe.db.commit()
+o
+
+    return {
+        "status": True,
+        "exists": False,
+        "mobile_no": mobile_no,
+        "profile_status": 0,
+        "gst_status": "Pending",
+        "dealer_status": "Pending",
+        "product_access": 0,
+        "marketplaces_assigned": [],
+        "message": "New customer created"
+    }
+
+
+
+@frappe.whitelist(allow_guest=True)
+def get_dealer_status(mobile_no=None):
+    """Return full dealer onboarding status after OTP verification."""
+    
+    # Validate mobile number
+    if not mobile_no:
+        return {"status": False, "message": "mobile_no is required"}
+
+    mobile_no = str(mobile_no).strip()
+
+    # Header Auth Check
+    cfg = frappe.get_site_config()
+    expected_key = cfg.get("shoption_api_key")
+    expected_secret = cfg.get("shoption_api_secret")
+
+    incoming_key = frappe.get_request_header("X-API-KEY")
+    incoming_secret = frappe.get_request_header("X-API-SECRET")
+
+    if incoming_key != expected_key or incoming_secret != expected_secret:
+        return {"status": False, "message": "Unauthorized"}
+
+    # Call existing customer status function
+    status = check_customer(mobile_no=mobile_no)
+
+    # Format response
+    return {
+        "status": True,
+        "exists": status.get("exists"),
+        "mobile_no": mobile_no,
+
+        "profile_status": status.get("profile_status"),
+        "gst_status": status.get("gst_status"),
+        "dealer_status": status.get("dealer_status"),
+        "product_access": status.get("product_access"),
+        "marketplaces_assigned": status.get("marketplaces_assigned", []),
+
+        "message": "Dealer status fetched"
+    }
+
+@frappe.whitelist(allow_guest=True)
+def save_basic_profile(
+    mobile_no=None,
+    customer_name=None,
+    owner_name=None,
+    email=None,
+    whatsapp_no=None,
+    address_line1=None,
+    address_line2=None,
+    pincode=None,
+    country=None,
+    state=None,
+    district=None,
+    tehsil=None,
+    marketplace_ids=None, 
+    gender=None,
+    dob=None,
+    gst_number=None
+):
+    """Save or update basic dealer profile."""
+
+    # ---- AUTH CHECK ----
+    cfg = frappe.get_site_config()
+    if frappe.get_request_header("X-API-KEY") != cfg.get("shoption_api_key"):
+        return {"status": False, "message": "Unauthorized"}
+    if frappe.get_request_header("X-API-SECRET") != cfg.get("shoption_api_secret"):
+        return {"status": False, "message": "Unauthorized"}
+
+    # ---- VALIDATION ----
+    if not mobile_no:
+        return {"status": False, "message": "mobile_no is required"}
+    mobile = "".join(ch for ch in str(mobile_no) if ch.isdigit())
+    if len(mobile) < 10:
+        return {"status": False, "message": "Invalid mobile number"}
+
+    # ---- MARKETPLACE LIST NORMALIZATION ----
+    mp_list = []
+    if marketplace_ids:
+        try:
+            import json
+            if marketplace_ids.strip().startswith("["):
+                mp_list = json.loads(marketplace_ids)
+            else:
+                mp_list = [x.strip() for x in marketplace_ids.split(",") if x.strip()]
+        except:
+            mp_list = [x.strip() for x in marketplace_ids.split(",") if x.strip()]
+
+    # ---- GET OR CREATE CUSTOMER ----
+    try:
+        cust_name = frappe.db.get_value("Customer", {"mobile_no": mobile}, "name")
+        if cust_name:
+            customer = frappe.get_doc("Customer", cust_name)
+        else:
+            customer = frappe.get_doc({
+                "doctype": "Customer",
+                "customer_name": customer_name or f"Customer-{mobile}",
+                "customer_type": "Individual",
+                "mobile_no": mobile
+            })
+            customer.insert(ignore_permissions=True)
+    except Exception as e:
+        frappe.log_error(f"Customer create/update failed: {e}", "save_basic_profile")
+        return {"status": False, "message": "Customer creation failed"}
+
+    # ---- UPDATE CUSTOMER FIELDS ----
+    try:
+        if customer_name:
+            customer.customer_name = customer_name
+
+        if gst_number:
+            customer.custom_gst_number = gst_number
+
+        # Mark profile as completed
+        customer.custom_profile_status = 1
+
+        # Ensure default flags
+        if not customer.custom_gst_status:
+            customer.custom_gst_status = "None"
+        if not customer.custom_dealer_status:
+            customer.custom_dealer_status = "None"
+        if not customer.custom_product_access:
+            customer.custom_product_access = 0
+
+        customer.save(ignore_permissions=True)
+    except Exception as e:
+        frappe.log_error(f"Customer update error: {e}", "save_basic_profile")
+        return {"status": False, "message": "Customer update failed"}
+
+    # ---- CONTACT CREATION ----
+    try:
+        contact_name = frappe.db.get_value("Contact", {"mobile_no": mobile}, "name")
+        if contact_name:
+            contact = frappe.get_doc("Contact", contact_name)
+        else:
+            contact = frappe.get_doc({
+                "doctype": "Contact",
+                "first_name": owner_name or customer.customer_name,
+                "mobile_no": mobile,
+                "email_id": email or "",
+                "phone": whatsapp_no or "",
+                "links": [{"link_doctype": "Customer", "link_name": customer.name}]
+            })
+        if owner_name:
+            contact.first_name = owner_name
+        if email:
+            contact.email_id = email
+        if whatsapp_no:
+            contact.phone = whatsapp_no
+        contact.save(ignore_permissions=True)
+    except Exception as e:
+        frappe.log_error(f"Contact update failed: {e}", "save_basic_profile")
+
+    try:
+        address_name = frappe.db.get_value(
+            "Address",
+            {"address_line1": address_line1, "pincode": pincode, "city": district},
+            "name"
+        )
+
+        if address_name:
+            addr = frappe.get_doc("Address", address_name)
+        else:
+            addr = frappe.get_doc({
+                "doctype": "Address",
+                "address_title": customer.customer_name,
+                "address_type": "Billing",
+                "address_line1": address_line1 or "",
+                "address_line2": address_line2 or "",
+                "pincode": pincode or "",
+                "city": district or "",
+                "state": state or "",
+                "country": country or "",
+            })
+
+        # Always ensure dynamic link
+        addr.append("links", {
+            "link_doctype": "Customer",
+            "link_name": customer.name
+        })
+
+        addr.save(ignore_permissions=True)
+
+    except Exception as e:
+        frappe.log_error(f"Address create/update failed: {e}", "save_basic_profile")
+
+    if mp_list:
+        frappe.db.delete("Marketplace Assignment", {"parent": customer.name})
+
+        for mp in mp_list:
+            # check marketplace exists (new doctype + new field)
+            if not frappe.db.exists("Marketplace", {"marketplace_name": mp}):
+                frappe.log_error(f"Marketplace not found: {mp}", "save_basic_profile")
+                continue
+
+            row = frappe.get_doc({
+                "doctype": "Marketplace Assignment",
+                "parent": customer.name,
+                "parenttype": "Customer",
+                "parentfield": "marketplaces_assigned",
+                "marketplace": mp,        # marketplace_name is used as name
+                "tahshil": tehsil or ""   # updated field name
+            })
+            row.insert(ignore_permissions=True)
+
+
+    except Exception as e:
+        frappe.log_error(f"Marketplace assignment failed: {e}", "save_basic_profile")
+
+    # ---- FINAL COMMIT ----
+    frappe.db.commit()
+
+    return {
+        "status": True,
+        "message": "Profile saved successfully",
+        "customer": customer.name,
+        "profile_status": customer.custom_profile_status,
+        "gst_status": customer.custom_gst_status,
+        "dealer_status": customer.custom_dealer_status,
+        "product_access": customer.custom_product_access
+    }

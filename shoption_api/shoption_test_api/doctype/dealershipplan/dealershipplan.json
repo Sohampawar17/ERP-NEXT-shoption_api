@@ -1,0 +1,97 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-25 12:18:46.799389",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "plan_details_section",
+  "name1",
+  "createdat",
+  "active",
+  "exclusive",
+  "column_break_obtl",
+  "plan_type",
+  "image",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "plan_details_section",
+   "fieldtype": "Section Break",
+   "label": "Plan Details"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Name",
+   "max_height": "2em",
+   "reqd": 1
+  },
+  {
+   "fieldname": "createdat",
+   "fieldtype": "Datetime",
+   "label": "CreatedAt"
+  },
+  {
+   "default": "0",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "default": "0",
+   "fieldname": "exclusive",
+   "fieldtype": "Check",
+   "label": "Exclusive"
+  },
+  {
+   "fieldname": "column_break_obtl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "plan_type",
+   "fieldtype": "Select",
+   "label": "Plan type",
+   "options": "Platinum\nGold\nSilver\nBronze"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-25 12:26:56.447900",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "DealershipPlan",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

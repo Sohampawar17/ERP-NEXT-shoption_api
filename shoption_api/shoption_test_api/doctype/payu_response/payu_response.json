@@ -1,0 +1,368 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2025-12-24 17:37:21.130145",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_5x4x",
+  "mihpayid",
+  "mode",
+  "status",
+  "key",
+  "txnid",
+  "amount",
+  "addedon",
+  "productinfo",
+  "firstname",
+  "lastname",
+  "address1",
+  "address2",
+  "city",
+  "state",
+  "country",
+  "zipcode",
+  "email",
+  "phone",
+  "udf1",
+  "udf2",
+  "udf3",
+  "udf4",
+  "udf5",
+  "cardtoken",
+  "cardno",
+  "field0",
+  "field1",
+  "field2",
+  "field3",
+  "field4",
+  "field5",
+  "field6",
+  "field7",
+  "field8",
+  "field9",
+  "paymentsource",
+  "pgtype",
+  "error",
+  "errormessage",
+  "netamountdebit",
+  "discount",
+  "offerkey",
+  "offeravailed",
+  "unmappedstatus",
+  "hash",
+  "bankrefno",
+  "bankrefnum",
+  "bankcode",
+  "surl",
+  "curl",
+  "furl",
+  "createdat",
+  "lastupdated_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_5x4x",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mihpayid",
+   "fieldtype": "Data",
+   "label": "Mihpay ID"
+  },
+  {
+   "fieldname": "mode",
+   "fieldtype": "Data",
+   "label": "Mode"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Status"
+  },
+  {
+   "fieldname": "key",
+   "fieldtype": "Data",
+   "label": "Key"
+  },
+  {
+   "fieldname": "txnid",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Txn ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Amount"
+  },
+  {
+   "fieldname": "addedon",
+   "fieldtype": "Data",
+   "label": "Added On"
+  },
+  {
+   "fieldname": "productinfo",
+   "fieldtype": "Long Text",
+   "label": "Product Info"
+  },
+  {
+   "fieldname": "firstname",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fieldname": "lastname",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "address1",
+   "fieldtype": "Data",
+   "label": "Address 1"
+  },
+  {
+   "fieldname": "address2",
+   "fieldtype": "Data",
+   "label": "Address 2"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country"
+  },
+  {
+   "fieldname": "zipcode",
+   "fieldtype": "Data",
+   "label": "Zipcode"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "udf1",
+   "fieldtype": "Data",
+   "label": "UDF1"
+  },
+  {
+   "fieldname": "udf2",
+   "fieldtype": "Data",
+   "label": "UDF2"
+  },
+  {
+   "fieldname": "udf3",
+   "fieldtype": "Data",
+   "label": "UDF3"
+  },
+  {
+   "fieldname": "udf4",
+   "fieldtype": "Data",
+   "label": "UDF4"
+  },
+  {
+   "fieldname": "udf5",
+   "fieldtype": "Data",
+   "label": "UDF5"
+  },
+  {
+   "fieldname": "cardtoken",
+   "fieldtype": "Data",
+   "label": "Card Token"
+  },
+  {
+   "fieldname": "cardno",
+   "fieldtype": "Data",
+   "label": "Card No"
+  },
+  {
+   "fieldname": "field0",
+   "fieldtype": "Data",
+   "label": "Field 0"
+  },
+  {
+   "fieldname": "field1",
+   "fieldtype": "Data",
+   "label": "Field 1"
+  },
+  {
+   "fieldname": "field2",
+   "fieldtype": "Data",
+   "label": "Field 2"
+  },
+  {
+   "fieldname": "field3",
+   "fieldtype": "Data",
+   "label": "Field 3"
+  },
+  {
+   "fieldname": "field4",
+   "fieldtype": "Data",
+   "label": "Field 4"
+  },
+  {
+   "fieldname": "field5",
+   "fieldtype": "Data",
+   "label": "Field 5"
+  },
+  {
+   "fieldname": "field6",
+   "fieldtype": "Data",
+   "label": "Field 6"
+  },
+  {
+   "fieldname": "field7",
+   "fieldtype": "Data",
+   "label": "Field 7"
+  },
+  {
+   "fieldname": "field8",
+   "fieldtype": "Data",
+   "label": "Field 8"
+  },
+  {
+   "fieldname": "field9",
+   "fieldtype": "Data",
+   "label": "Field 9"
+  },
+  {
+   "fieldname": "paymentsource",
+   "fieldtype": "Data",
+   "label": "Payment Source"
+  },
+  {
+   "fieldname": "pgtype",
+   "fieldtype": "Data",
+   "label": "PG Type"
+  },
+  {
+   "fieldname": "error",
+   "fieldtype": "Data",
+   "label": "Error"
+  },
+  {
+   "fieldname": "errormessage",
+   "fieldtype": "Long Text",
+   "label": "Error Message"
+  },
+  {
+   "fieldname": "netamountdebit",
+   "fieldtype": "Data",
+   "label": "Net Amount Debit"
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Data",
+   "label": "Discount"
+  },
+  {
+   "fieldname": "offerkey",
+   "fieldtype": "Data",
+   "label": "Offer Key"
+  },
+  {
+   "fieldname": "offeravailed",
+   "fieldtype": "Data",
+   "label": "Offer Availed"
+  },
+  {
+   "fieldname": "unmappedstatus",
+   "fieldtype": "Data",
+   "label": "Unmapped Status"
+  },
+  {
+   "fieldname": "hash",
+   "fieldtype": "Small Text",
+   "label": "Hash"
+  },
+  {
+   "fieldname": "bankrefno",
+   "fieldtype": "Data",
+   "label": "Bank Ref No"
+  },
+  {
+   "fieldname": "bankrefnum",
+   "fieldtype": "Data",
+   "label": "Bank Ref Num"
+  },
+  {
+   "fieldname": "bankcode",
+   "fieldtype": "Data",
+   "label": "Bank Code"
+  },
+  {
+   "fieldname": "surl",
+   "fieldtype": "Data",
+   "label": "SURL"
+  },
+  {
+   "fieldname": "curl",
+   "fieldtype": "Data",
+   "label": "CURL"
+  },
+  {
+   "fieldname": "furl",
+   "fieldtype": "Data",
+   "label": "FURL"
+  },
+  {
+   "fieldname": "createdat",
+   "fieldtype": "Datetime",
+   "label": "Created At"
+  },
+  {
+   "fieldname": "lastupdated_at",
+   "fieldtype": "Datetime",
+   "label": "Last Updated At"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-15 13:22:29.298012",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "PayU Response",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

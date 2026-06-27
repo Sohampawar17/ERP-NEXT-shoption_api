@@ -1,0 +1,198 @@
+# import_master.py
+import frappe
+from openpyxl import load_workbook
+from frappe.utils import now_datetime
+from datetime import timedelta
+import csv
+import os
+
+
+DATA_DIR = frappe.get_app_path("shoption_api", "data_import")
+
+def _load_sheet_rows(path, sheet_name=None):
+    wb = load_workbook(path, read_only=True, data_only=True)
+    if sheet_name:
+        ws = wb[sheet_name]
+    else:
+        ws = wb[wb.sheetnames[0]]
+    rows = list(ws.iter_rows(values_only=True))
+    if not rows:
+        return []
+    headers = [str(h).strip() if h is not None else "" for h in rows[0]]
+    data = []
+    for r in rows[1:]:
+        row = {}
+        for i, val in enumerate(r):
+            if i < len(headers) and headers[i]:
+                row[headers[i].strip()] = val
+        data.append(row)
+    return data
+
+def _safe_str(v):
+    return "" if v is None else str(v).strip()
+
+def import_country(filename="country.xlsx"):
+    path = f"{DATA_DIR}/{filename}"
+    frappe.logger().info(f"Import Country from {path}")
+    rows = _load_sheet_rows(path)
+    created = 0
+    updated = 0
+    for r in rows:
+        country_id = _safe_str(r.get("country_id") or r.get("CountryId") or r.get("id"))
+        country_name = _safe_str(r.get("country_name") or r.get("CountryName") or r.get("name"))
+        if not country_id:
+            frappe.logger().warning("Skipping row without country_id")
+            continue
+        # find existing
+        name = frappe.db.get_value("Country Master", {"country_id": country_id}, "name")
+        if name:
+            doc = frappe.get_doc("Country Master", name)
+            doc.country_name = country_name
+            doc.save(ignore_permissions=True)
+            updated += 1
+        else:
+            doc = frappe.new_doc("Country Master")
+            # keep a stable name by using country_id as name if possible
+            try:
+                doc.name = str(country_id)
+            except Exception:
+                pass
+            doc.country_id = int(country_id) if str(country_id).isdigit() else country_id
+            doc.country_name = country_name
+            doc.insert(ignore_permissions=True)
+            created += 1
+    frappe.db.commit()
+    frappe.logger().info(f"Country import complete. created={created}, updated={updated}")
+
+def import_state(filename="state.xlsx"):
+    path = f"{DATA_DIR}/{filename}"
+    frappe.logger().info(f"Import State from {path}")
+    rows = _load_sheet_rows(path)
+    created = updated = 0
+    for r in rows:
+        state_id = _safe_str(r.get("state_id") or r.get("StateId") or r.get("id"))
+        state_name = _safe_str(r.get("state_name") or r.get("StateName") or r.get("name"))
+        country_id = _safe_str(r.get("country") or r.get("country_id") or r.get("CountryId"))
+        if not state_id:
+            frappe.logger().warning("Skipping state row without state_id")
+            continue
+        # resolve country link
+        country_name = None
+        if country_id:
+            country_name = frappe.db.get_value("Country Master", {"country_id": str(country_id)}, "name")
+        name = frappe.db.get_value("State Master", {"state_id": state_id}, "name")
+        if name:
+            doc = frappe.get_doc("State Master", name)
+            doc.state_name = state_name
+            if country_name:
+                doc.country = country_name
+            doc.save(ignore_permissions=True)
+            updated += 1
+        else:
+            doc = frappe.new_doc("State Master")
+            try:
+                doc.name = str(state_id)
+            except Exception:
+                pass
+            doc.state_id = int(state_id) if str(state_id).isdigit() else state_id
+            doc.state_name = state_name
+            if country_name:
+                doc.country = country_name
+            doc.insert(ignore_permissions=True)
+            created += 1
+    frappe.db.commit()
+    frappe.logger().info(f"State import complete. created={created}, updated={updated}")
+
+def import_district(filename="district.xlsx"):
+    path = f"{DATA_DIR}/{filename}"
+    frappe.logger().info(f"Import District from {path}")
+    rows = _load_sheet_rows(path)
+    created = updated = 0
+    for r in rows:
+        district_id = _safe_str(r.get("district_id") or r.get("DistrictId") or r.get("id"))
+        district_name = _safe_str(r.get("district_name") or r.get("DistrictName") or r.get("name"))
+        state_id = _safe_str(r.get("state") or r.get("state_id") or r.get("StateId"))
+        if not district_id:
+            frappe.logger().warning("Skipping district row without district_id")
+            continue
+        state_name = None
+        if state_id:
+            state_name = frappe.db.get_value("State Master", {"state_id": str(state_id)}, "name")
+        name = frappe.db.get_value("District Master", {"district_id": district_id}, "name")
+        if name:
+            doc = frappe.get_doc("District Master", name)
+            doc.district_name = district_name
+            if state_name:
+                doc.state = state_name
+            doc.save(ignore_permissions=True)
+            updated += 1
+        else:
+            doc = frappe.new_doc("District Master")
+            try:
+                doc.name = str(district_id)
+            except Exception:
+                pass
+            doc.district_id = int(district_id) if str(district_id).isdigit() else district_id
+            doc.district_name = district_name
+            if state_name:
+                doc.state = state_name
+            doc.insert(ignore_permissions=True)
+            created += 1
+    frappe.db.commit()
+    frappe.logger().info(f"District import complete. created={created}, updated={updated}")
+
+def import_tehsil(filename="tehsil.xlsx"):
+    path = f"{DATA_DIR}/{filename}"
+    frappe.logger().info(f"Import Tehsil from {path}")
+    rows = _load_sheet_rows(path)
+    created = updated = 0
+    for r in rows:
+        tehsil_id = _safe_str(r.get("tehsil_id") or r.get("TehsilId") or r.get("id"))
+        tehsil_name = _safe_str(r.get("tehsil_name") or r.get("TehsilName") or r.get("name"))
+        district_id = _safe_str(r.get("district") or r.get("district_id") or r.get("DistrictId"))
+        if not tehsil_id:
+            frappe.logger().warning("Skipping tehsil row without tehsil_id")
+            continue
+        district_name = None
+        if district_id:
+            district_name = frappe.db.get_value("District Master", {"district_id": str(district_id)}, "name")
+        name = frappe.db.get_value("Tehsil Master", {"tehsil_id": tehsil_id}, "name")
+        if name:
+            doc = frappe.get_doc("Tehsil Master", name)
+            doc.tehsil_name = tehsil_name
+            if district_name:
+                doc.district = district_name
+            doc.save(ignore_permissions=True)
+            updated += 1
+        else:
+            doc = frappe.new_doc("Tehsil Master")
+            try:
+                doc.name = str(tehsil_id)
+            except Exception:
+                pass
+            doc.tehsil_id = int(tehsil_id) if str(tehsil_id).isdigit() else tehsil_id
+            doc.tehsil_name = tehsil_name
+            if district_name:
+                doc.district = district_name
+            doc.insert(ignore_permissions=True)
+            created += 1
+    frappe.db.commit()
+    frappe.logger().info(f"Tehsil import complete. created={created}, updated={updated}")
+
+
+
+
+def import_all():
+    """
+    Run this from bench console or via:
+    bench --site yoursite execute shoption_api.data_import.import_master.import_all
+    """
+    frappe.logger().info("Starting master import: Country -> State -> District -> Tehsil -> Marketplace")
+    import_country("country.xlsx")
+    import_state("state.xlsx")
+    import_district("district.xlsx")
+    import_tehsil("tehsil.xlsx")
+    import_marketplace("Marketplace.csv")
+    frappe.logger().info("All masters imported.")
+    return {"status": "ok", "time": str(now_datetime())}
+

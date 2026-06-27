@@ -1,0 +1,182 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2026-01-05 17:34:09.540143",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "payment_id",
+  "merchant_payment_ref_id",
+  "amount_value",
+  "amount_formatted_value",
+  "currency",
+  "paymentdate",
+  "redirect_url",
+  "redirect_confirm_url",
+  "redirect_cancel_url",
+  "callback_url",
+  "paymenturl",
+  "status",
+  "auto_capture",
+  "uncaptured_amount_value",
+  "uncaptured_amount_formatted_value",
+  "account_id",
+  "merchant_customer_ref_id",
+  "customer_id",
+  "order_id",
+  "createdat",
+  "lastupdatedat",
+  "raw_json"
+ ],
+ "fields": [
+  {
+   "fieldname": "payment_id",
+   "fieldtype": "Data",
+   "label": "PaymentId",
+   "unique": 1
+  },
+  {
+   "fieldname": "merchant_payment_ref_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "MerchantPaymentRefId",
+   "unique": 1
+  },
+  {
+   "fieldname": "amount_value",
+   "fieldtype": "Float",
+   "label": "AmountValue"
+  },
+  {
+   "fieldname": "amount_formatted_value",
+   "fieldtype": "Data",
+   "label": "AmountFormattedValue"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Data",
+   "label": "Currency"
+  },
+  {
+   "fieldname": "paymentdate",
+   "fieldtype": "Data",
+   "label": "PaymentDate"
+  },
+  {
+   "fieldname": "redirect_url",
+   "fieldtype": "Small Text",
+   "label": "RedirectUrl"
+  },
+  {
+   "fieldname": "redirect_confirm_url",
+   "fieldtype": "Small Text",
+   "label": "RedirectConfirmUrl"
+  },
+  {
+   "fieldname": "redirect_cancel_url",
+   "fieldtype": "Small Text",
+   "label": "RedirectCancelUrl"
+  },
+  {
+   "fieldname": "callback_url",
+   "fieldtype": "Small Text",
+   "label": "CallbackUrl"
+  },
+  {
+   "fieldname": "paymenturl",
+   "fieldtype": "Small Text",
+   "label": "PaymentUrl"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_capture",
+   "fieldtype": "Check",
+   "label": "AutoCapture"
+  },
+  {
+   "fieldname": "uncaptured_amount_value",
+   "fieldtype": "Float",
+   "label": "UncapturedAmountValue"
+  },
+  {
+   "fieldname": "uncaptured_amount_formatted_value",
+   "fieldtype": "Data",
+   "label": "UncapturedAmountFormattedValue"
+  },
+  {
+   "fieldname": "account_id",
+   "fieldtype": "Data",
+   "label": "AccountId"
+  },
+  {
+   "fieldname": "merchant_customer_ref_id",
+   "fieldtype": "Data",
+   "label": "MerchantCustomerRefId"
+  },
+  {
+   "fieldname": "customer_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "CustomerId"
+  },
+  {
+   "fieldname": "order_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "OrderId"
+  },
+  {
+   "default": "Now",
+   "fieldname": "createdat",
+   "fieldtype": "Datetime",
+   "label": "CreatedAt"
+  },
+  {
+   "fieldname": "lastupdatedat",
+   "fieldtype": "Datetime",
+   "label": "LastUpdatedAt"
+  },
+  {
+   "fieldname": "raw_json",
+   "fieldtype": "Code",
+   "label": "raw_json",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-15 13:26:09.446546",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Rupifi Webhook Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

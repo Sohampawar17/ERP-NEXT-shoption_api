@@ -1,0 +1,75 @@
+import frappe
+from frappe import _
+
+@frappe.whitelist(allow_guest=True)
+def check_customer(mobile_no=None):
+    if not mobile_no:
+        return {"status": False, "message": "mobile_no is required"}
+
+    mobile_no = str(mobile_no).strip()
+
+    # 1️⃣ Check if customer already exists
+    customer = frappe.get_all(
+        "Customer",
+        filters={"mobile_no": mobile_no},
+        fields=[
+            "name",
+            "mobile_no",
+            "custom_profile_status_",
+            "custom_get_status",
+            "custom_dealer_status",
+            "custom_product_access"
+        ]
+    )
+
+    if customer:
+        cust = customer[0]
+
+        # 2️⃣ Fetch marketplaces assigned (Child Table)
+        assigned = frappe.get_all(
+            "Marketplace Assignment",
+            filters={"parent": cust.name},
+            fields=["marketplace", "tehsil"]
+        )
+
+        return {
+            "status": True,
+            "exists": True,
+            "mobile_no": mobile_no,
+            "profile_status": cust.custom_profile_status,
+            "gst_status": cust.custom_get_status,
+            "dealer_status": cust.custom_dealer_status,
+            "product_access": cust.custom_product_access,
+            "marketplaces_assigned": assigned,
+            "message": "Existing dealer fetched"
+        }
+
+    # 3️⃣ New Customer → Create lightweight entry
+    new_cust = frappe.get_doc({
+        "doctype": "Customer",
+        "customer_name": mobile_no,
+        "mobile_no": mobile_no,
+        "customer_group": "Individual",
+        "territory": "All Territories",
+
+        # IMPORTANT → all custom fields mapped correctly
+        "custom_profile_status": 0,
+        "custom_get_status": "Pending",
+        "custom_dealer_status": "Pending",
+        "custom_product_access": 0,
+    })
+
+    new_cust.insert(ignore_permissions=True)
+    frappe.db.commit()
+
+    return {
+        "status": True,
+        "exists": False,
+        "mobile_no": mobile_no,
+        "profile_status": 0,
+        "gst_status": "Pending",
+        "dealer_status": "Pending",
+        "product_access": 0,
+        "marketplaces_assigned": [],
+        "message": "New customer created"
+    }

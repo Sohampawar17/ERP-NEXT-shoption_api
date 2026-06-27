@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-29 21:32:58.614489",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "account_for_payment_entry",
+  "paid_to_account_currency"
+ ],
+ "fields": [
+  {
+   "fieldname": "account_for_payment_entry",
+   "fieldtype": "Link",
+   "label": "Account for Payment Entry",
+   "link_filters": "[[\"Account\",\"is_group\",\"=\",0],[\"Account\",\"disabled\",\"=\",0]]",
+   "options": "Account"
+  },
+  {
+   "fieldname": "paid_to_account_currency",
+   "fieldtype": "Link",
+   "label": "paid_to_account_currency",
+   "options": "Currency"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-12-29 21:38:56.875615",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Payu Setting",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

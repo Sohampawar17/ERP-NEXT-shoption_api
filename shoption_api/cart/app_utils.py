@@ -1,0 +1,109 @@
+import frappe
+import wrapt
+from bs4 import BeautifulSoup
+from frappe.utils import cstr
+from frappe.auth import LoginManager
+
+
+def gen_response(status, message, data=[]):
+    frappe.response["http_status_code"] = status
+    if status == 500:
+        frappe.response["message"] = BeautifulSoup(str(message)).get_text()
+    else:
+        frappe.response["message"] = message
+    frappe.response["data"] = data
+
+
+def exception_handel(e):
+    frappe.log_error(title="Mobile App Error", message=frappe.get_traceback())
+    if hasattr(e, "http_status_code"):
+        return gen_response(e.http_status_code, cstr(e))
+    else:
+        return gen_response(500, cstr(e))
+
+
+def generate_key(user):
+    user_details = frappe.get_doc("User", user)
+    api_secret = api_key = ""
+    if not user_details.api_key and not user_details.api_secret:
+        api_secret = frappe.generate_hash(length=15)
+        # if api key is not set generate api key
+        api_key = frappe.generate_hash(length=15)
+        user_details.api_key = api_key
+        user_details.api_secret = api_secret
+        user_details.save(ignore_permissions=True)
+    else:
+        api_secret = user_details.get_password("api_secret")
+        api_key = user_details.get("api_key")
+    return {"api_secret": api_secret, "api_key": api_key}
+
+
+def validate_method(methods):
+    @wrapt.decorator
+    def wrapper(wrapped, instance, args, kwargs):
+        if frappe.local.request.method not in methods:
+            return gen_response(500, "Invalid Request Method")
+        return wrapped(*args, **kwargs)
+
+    return wrapper
+
+@frappe.whitelist(allow_guest=True)
+def login(usr, pwd):
+    try:
+        login_manager = LoginManager()
+        login_manager.authenticate(usr, pwd)
+        login_manager.post_login()
+        if frappe.response["message"] == "Logged In":
+            frappe.response["user"] = login_manager.user
+            frappe.response["key_details"] = generate_key(login_manager.user)
+        gen_response(200, frappe.response["message"])
+    except frappe.AuthenticationError:
+        gen_response(500, frappe.response["message"])
+    except Exception as e:
+        return exception_handel(e)
+
+
+def get_global_defaults():
+    return frappe.get_doc("Global Defaults", "Global Defaults")
+
+
+def remove_default_fields(data):
+    # Example usage:
+    # remove_default_fields(
+    #     json.loads(
+    #         frappe.get_doc("Address", "name").as_json()
+    #     )
+    # )
+    for row in [
+        "owner",
+        "creation",
+        "modified",
+        "modified_by",
+        "docstatus",
+        "idx",
+        "doctype",
+        "links",
+    ]:
+        if data.get(row):
+            del data[row]
+    return data
+
+
+def prepare_json_data(key_list, data):
+    return_data = {}
+    for key in data:
+        if key in key_list:
+            return_data[key] = data.get(key)
+    return return_data
+
+
+def get_employee_by_user(user, fields=["name"]):
+    if isinstance(fields, str):
+        fields = [fields]
+    emp_data = frappe.db.get_value(
+        "Employee",
+        {"user_id": user},
+        fields,
+        as_dict=1,
+    )
+    return emp_data

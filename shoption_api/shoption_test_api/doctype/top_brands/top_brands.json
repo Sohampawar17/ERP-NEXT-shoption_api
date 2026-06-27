@@ -1,0 +1,68 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-12-02 11:03:36.573082",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "brand_id",
+  "brand_name",
+  "naming_series",
+  "image"
+ ],
+ "fields": [
+  {
+   "fetch_from": "brand_id.brand",
+   "fieldname": "brand_name",
+   "fieldtype": "Data",
+   "label": "brand name"
+  },
+  {
+   "fetch_from": "brand_id.custom_image_path",
+   "fieldname": "image",
+   "fieldtype": "Small Text",
+   "label": "image"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming series",
+   "options": "TB/.{brand_id}"
+  },
+  {
+   "fieldname": "brand_id",
+   "fieldtype": "Link",
+   "label": "brand id",
+   "options": "Brand"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-14 18:01:59.825367",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Top Brands",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

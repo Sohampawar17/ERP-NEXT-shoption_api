@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-25 16:18:27.420722",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "dealership",
+  "deposit",
+  "first_order_value",
+  "target",
+  "target_tenure",
+  "column_break_skki",
+  "plan"
+ ],
+ "fields": [
+  {
+   "fieldname": "dealership",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Dealership",
+   "options": "Dealership",
+   "reqd": 1
+  },
+  {
+   "fieldname": "deposit",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Deposit(Rs.)",
+   "max_height": "2em",
+   "reqd": 1
+  },
+  {
+   "fieldname": "first_order_value",
+   "fieldtype": "Currency",
+   "label": "First Order Value(Rs.)",
+   "max_height": "2em",
+   "reqd": 1
+  },
+  {
+   "fieldname": "target",
+   "fieldtype": "Currency",
+   "label": "Target(Rs.)",
+   "max_height": "2em",
+   "reqd": 1
+  },
+  {
+   "fieldname": "target_tenure",
+   "fieldtype": "Int",
+   "label": "Target Tenure(Yrs)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_skki",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "plan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Plan",
+   "options": "DealershipPlan",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-25 16:29:06.176517",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "DealershipPlanMap",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

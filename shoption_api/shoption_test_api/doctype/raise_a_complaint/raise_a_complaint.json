@@ -1,0 +1,208 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-12-31 00:23:59.603656",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "order_id",
+  "customer",
+  "order_details",
+  "column_break_rbro",
+  "raised_on",
+  "naming_series",
+  "complaint_type",
+  "status",
+  "resolved_on",
+  "section_break_rqzn",
+  "subject",
+  "description",
+  "section_break_dwxt",
+  "attachment_1",
+  "attachment_2",
+  "column_break_zvie",
+  "attachment_3",
+  "section_break_yisf",
+  "complaint_raised_by",
+  "complaint_raised_by_name",
+  "column_break_jxrc",
+  "resolved_by",
+  "resolved_by_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "order_id",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Order Id",
+   "options": "Sales Order",
+   "reqd": 1
+  },
+  {
+   "fieldname": "complaint_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Complaint Type",
+   "link_filters": "[[\"Complaint Type\",\"disabled\",\"=\",0]]",
+   "options": "Complaint Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "label": "Subject",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "attachment_1",
+   "fieldtype": "Attach",
+   "label": "Attachment 1"
+  },
+  {
+   "fieldname": "attachment_2",
+   "fieldtype": "Attach",
+   "label": "Attachment 2"
+  },
+  {
+   "fieldname": "attachment_3",
+   "fieldtype": "Attach",
+   "label": "Attachment 3"
+  },
+  {
+   "default": "now",
+   "fieldname": "raised_on",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Raised On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "link_filters": "[[\"Complaint Status\",\"disabled\",\"=\",0]]",
+   "options": "Complaint Status",
+   "reqd": 1
+  },
+  {
+   "fieldname": "resolved_on",
+   "fieldtype": "Datetime",
+   "label": "Resolved On",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "order_id.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "section_break_dwxt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_zvie",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_rbro",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_rqzn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "CMP-.YYYY.MM.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "CMP-.YYYY.MM.-.#####"
+  },
+  {
+   "fieldname": "section_break_yisf",
+   "fieldtype": "Section Break",
+   "read_only": 1
+  },
+  {
+   "default": "__user",
+   "fieldname": "complaint_raised_by",
+   "fieldtype": "Link",
+   "label": "Complaint Raised By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jxrc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "resolved_by",
+   "fieldtype": "Link",
+   "label": "Resolved By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "complaint_raised_by.full_name",
+   "fieldname": "complaint_raised_by_name",
+   "fieldtype": "Data",
+   "label": "Complaint Raised By Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "resolved_by.full_name",
+   "fieldname": "resolved_by_name",
+   "fieldtype": "Data",
+   "label": "Resolved By Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "order_details",
+   "fieldtype": "HTML",
+   "label": "Order Details"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-01 12:22:07.919011",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "Raise a Complaint",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

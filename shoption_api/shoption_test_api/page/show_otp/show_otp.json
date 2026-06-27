@@ -1,0 +1,23 @@
+{
+ "content": null,
+ "creation": "2026-04-09 15:33:37.250960",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2026-04-09 16:23:14.889024",
+ "modified_by": "Administrator",
+ "module": "Shoption test api",
+ "name": "show-otp",
+ "owner": "Administrator",
+ "page_name": "show-otp",
+ "roles": [
+  {
+   "role": "OTP Manager"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Show OTP Page"
+}
