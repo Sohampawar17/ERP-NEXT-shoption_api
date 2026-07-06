@@ -14,6 +14,10 @@ from frappe.utils import (
     get_datetime
 )
 from shoption_api.cart.app_utils import generate_key
+from shoption_api.shoption_test_api.doctype.payment_webhook_log.payment_webhook_log import (
+    get_payment_webhook_log,
+    upsert_payment_webhook_log,
+)
 
 
 def gen_response(status, message, data=[]):
@@ -32,6 +36,54 @@ def validate_method(methods):
         return wrapped(*args, **kwargs)
 
     return wrapper
+
+
+def _serialize_webhook_payload(payload):
+    if payload is None:
+        return None
+    if isinstance(payload, (dict, list)):
+        return json.dumps(payload, indent=2)
+    return cstr(payload)
+
+
+def _normalize_datetime_value(value):
+    if not value:
+        return None
+    return cstr(get_datetime(value))
+
+
+def _is_duplicate_rupifi_update(doc, data):
+    amount = data.get("amount") or {}
+    uncaptured = data.get("uncaptured_amount") or {}
+    incoming_raw_json = (
+        _serialize_webhook_payload(data.get("raw_json"))
+        if "raw_json" in data
+        else doc.raw_json
+    )
+
+    return all(
+        [
+            cstr(doc.payment_id or "") == cstr(data.get("payment_id") or doc.payment_id or ""),
+            cstr(doc.status or "") == cstr(data.get("status") or doc.status or ""),
+            cstr(doc.auto_capture or "") == cstr(data.get("auto_capture") or doc.auto_capture or ""),
+            _normalize_datetime_value(doc.paymentdate) == _normalize_datetime_value(data.get("payment_date") or doc.paymentdate),
+            cstr(doc.redirect_url or "") == cstr(data.get("redirect_url") or doc.redirect_url or ""),
+            cstr(doc.redirect_confirm_url or "") == cstr(data.get("redirect_confirm_url") or doc.redirect_confirm_url or ""),
+            cstr(doc.redirect_cancel_url or "") == cstr(data.get("redirect_cancel_url") or doc.redirect_cancel_url or ""),
+            cstr(doc.callback_url or "") == cstr(data.get("callback_url") or doc.callback_url or ""),
+            cstr(doc.paymenturl or "") == cstr(data.get("payment_url") or doc.paymenturl or ""),
+            cstr(doc.amount_value or "") == cstr(amount.get("value") if "value" in amount else doc.amount_value or ""),
+            cstr(doc.amount_formatted_value or "") == cstr(amount.get("formatted_value") if "formatted_value" in amount else doc.amount_formatted_value or ""),
+            cstr(doc.currency or "") == cstr(amount.get("currency") if "currency" in amount else doc.currency or ""),
+            cstr(doc.uncaptured_amount_value or "") == cstr(uncaptured.get("value") if "value" in uncaptured else doc.uncaptured_amount_value or ""),
+            cstr(doc.uncaptured_amount_formatted_value or "") == cstr(uncaptured.get("formatted_value") if "formatted_value" in uncaptured else doc.uncaptured_amount_formatted_value or ""),
+            cstr(doc.merchant_customer_ref_id or "") == cstr(data.get("merchant_customer_ref_id") or doc.merchant_customer_ref_id or ""),
+            cstr(doc.account_id or "") == cstr(data.get("account_id") or doc.account_id or ""),
+            cstr(doc.order_id or "") == cstr(data.get("order_id") or doc.order_id or ""),
+            cstr(doc.customer_id or "") == cstr(data.get("customer_id") or doc.customer_id or ""),
+            cstr(doc.raw_json or "") == cstr(incoming_raw_json or ""),
+        ]
+    )
 
 @frappe.whitelist(allow_guest=True)
 def get_user_details(customer_id=None):
@@ -343,32 +395,49 @@ def save_payment_initiation():
         if not raw_json:
             return {"success": False, "message": "raw_json is required"}
 
-        # --------------------------------------------------
-        # If raw_json is already a dict, convert to pretty string
-        # --------------------------------------------------
-        if isinstance(raw_json, dict):
-            raw_json_str = json.dumps(raw_json, indent=2)
-        else:
-            # fallback if someone sends a string
-            raw_json_str = str(raw_json)
+        raw_json_str = _serialize_webhook_payload(raw_json)
 
         # --------------------------------------------------
-        # Create Rupifi Webhook Log
+        # Upsert Rupifi Webhook Log
         # --------------------------------------------------
-        doc = frappe.get_doc({
-            "doctype": "Rupifi Webhook Log",
-            "order_id":order_id,
-            "customer_id": customer_id,
-            "merchant_payment_ref_id": merchant_payment_ref_id,
-            "raw_json": raw_json_str,
-            "created_at": now(),
-            "last_updated_at": now()
-        })
+        webhook_log_name = frappe.db.get_value(
+            "Rupifi Webhook Log",
+            {"merchant_payment_ref_id": merchant_payment_ref_id},
+            "name",
+        )
+        if webhook_log_name:
+            return {
+                "success": True,
+                "status": "duplicate",
+                "docname": webhook_log_name,
+                "message": "Duplicate payment initiation received. Existing Rupifi Webhook Log was not updated.",
+            }
+
+        doc = frappe.new_doc("Rupifi Webhook Log")
+
+        doc.order_id = order_id
+        doc.customer_id = customer_id
+        doc.merchant_payment_ref_id = merchant_payment_ref_id
+        doc.raw_json = raw_json_str
 
         doc.insert(ignore_permissions=True)
+
+        upsert_payment_webhook_log(
+            provider="Rupifi",
+            transaction_reference=merchant_payment_ref_id,
+            payload=doc.raw_json,
+            status=doc.status,
+            source_doctype="Rupifi Webhook Log",
+            source_name=doc.name,
+            external_payment_id=doc.payment_id,
+        )
         frappe.db.commit()
 
-        return {"success": True}
+        return {
+            "success": True,
+            "status": "saved",
+            "docname": doc.name,
+        }
 
     except Exception:
         frappe.log_error(message=frappe.get_traceback(), title="save_payment_initiation error")
@@ -388,11 +457,22 @@ def update_payment_webhook():
 				"message": "merchant_payment_ref_id is required"
 			}
 
-		# Fetch existing webhook log
-		doc = frappe.get_doc(
+		webhook_log_name = frappe.db.get_value(
 			"Rupifi Webhook Log",
-			{"merchant_payment_ref_id": merchant_payment_ref_id}
+			{"merchant_payment_ref_id": merchant_payment_ref_id},
+			"name",
 		)
+		is_existing = bool(webhook_log_name)
+		doc = frappe.get_doc("Rupifi Webhook Log", webhook_log_name) if is_existing else frappe.new_doc("Rupifi Webhook Log")
+		doc.merchant_payment_ref_id = merchant_payment_ref_id
+
+		if is_existing and _is_duplicate_rupifi_update(doc, data):
+			return {
+				"success": True,
+				"status": "duplicate",
+				"message": "Duplicate payment webhook received. Existing Rupifi Webhook Log was not updated.",
+				"docname": doc.name
+			}
 
 		# --------------------------
 		# Top-level fields
@@ -453,29 +533,57 @@ def update_payment_webhook():
 		if "account_id" in data:
 			doc.account_id = data.get("account_id")
 
+		if "order_id" in data:
+			doc.order_id = data.get("order_id")
+
+		if "customer_id" in data:
+			doc.customer_id = data.get("customer_id")
+
 		# --------------------------
 		# Raw JSON storage
 		# --------------------------
 		if "raw_json" in data:
-			# Ensure raw_json is stored as string
-			if isinstance(data.get("raw_json"), (dict, list)):
-				doc.raw_json = json.dumps(data.get("raw_json"))
-			else:
-				doc.raw_json = data.get("raw_json")
+			doc.raw_json = _serialize_webhook_payload(data.get("raw_json"))
 
-		doc.save(ignore_permissions=True)
+		webhook_log = get_payment_webhook_log("Rupifi", merchant_payment_ref_id)
+		should_enqueue = not (
+			webhook_log
+			and webhook_log.processed
+			and (webhook_log.payment_entry or (doc.status or "").upper() != "CAPTURED")
+		)
+
+		if is_existing:
+			doc.save(ignore_permissions=True)
+		else:
+			doc.insert(ignore_permissions=True)
+
+		upsert_payment_webhook_log(
+			provider="Rupifi",
+			transaction_reference=merchant_payment_ref_id,
+			payload=doc.raw_json,
+			status=doc.status,
+			source_doctype="Rupifi Webhook Log",
+			source_name=doc.name,
+			external_payment_id=doc.payment_id,
+			processed=0 if should_enqueue else None,
+			processed_on=None if should_enqueue else None,
+			error_message=None if should_enqueue else None,
+		)
 		frappe.db.commit()
+
+		if should_enqueue:
+			frappe.enqueue(
+				"shoption_api.credit.credit.process_rupifi_webhook_log",
+				webhook_log_name=doc.name,
+				queue="short",
+				timeout=300,
+			)
 
 		return {
 			"success": True,
-			"message": "Payment webhook updated successfully",
+			"message": "Payment webhook saved successfully",
+			"status": "updated" if is_existing else "saved",
 			"docname": doc.name
-		}
-
-	except frappe.DoesNotExistError:
-		return {
-			"success": False,
-			"message": "Webhook record not found"
 		}
 
 	except Exception:
@@ -487,6 +595,55 @@ def update_payment_webhook():
 			"success": False,
 			"message": "Internal server error"
 		}
+
+
+def process_rupifi_webhook_log(webhook_log_name):
+	try:
+		frappe.set_user("Administrator")
+		doc = frappe.get_doc("Rupifi Webhook Log", webhook_log_name)
+		webhook_log = get_payment_webhook_log("Rupifi", doc.merchant_payment_ref_id)
+		payment_entry = webhook_log.payment_entry if webhook_log else None
+
+		if (doc.status or "").upper() == "CAPTURED":
+			payment_entry = doc.create_payment_entry()
+
+		upsert_payment_webhook_log(
+			provider="Rupifi",
+			transaction_reference=doc.merchant_payment_ref_id,
+			payload=doc.raw_json,
+			status=doc.status,
+			source_doctype="Rupifi Webhook Log",
+			source_name=webhook_log_name,
+			external_payment_id=doc.payment_id,
+			processed=1,
+			processed_on=now(),
+			error_message=None,
+			payment_entry=payment_entry,
+		)
+		frappe.db.commit()
+	except Exception:
+		frappe.db.rollback()
+		doc = frappe.get_doc("Rupifi Webhook Log", webhook_log_name)
+		webhook_log = get_payment_webhook_log("Rupifi", doc.merchant_payment_ref_id)
+		upsert_payment_webhook_log(
+			provider="Rupifi",
+			transaction_reference=doc.merchant_payment_ref_id,
+			payload=doc.raw_json,
+			status=doc.status,
+			source_doctype="Rupifi Webhook Log",
+			source_name=webhook_log_name,
+			external_payment_id=doc.payment_id,
+			processed=0,
+			error_message=frappe.get_traceback(),
+			payment_entry=webhook_log.payment_entry if webhook_log else None,
+		)
+		frappe.db.commit()
+		frappe.log_error(
+			message=frappe.get_traceback(),
+			title=f"Rupifi Webhook Processing Error - {webhook_log_name}",
+		)
+	finally:
+		frappe.set_user("Administrator")
 
 @frappe.whitelist(allow_guest=True)
 @validate_method(["GET"])

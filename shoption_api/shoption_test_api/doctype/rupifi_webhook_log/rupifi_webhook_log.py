@@ -1,5 +1,6 @@
 import json
 import frappe
+from frappe import _
 from frappe.model.document import Document
 from frappe.utils import now, get_datetime,flt,today
 
@@ -8,13 +9,48 @@ class RupifiWebhookLog(Document):
 
 	def before_insert(self):
 		# Only set created timestamp here
-		self.createdat = now()
+		if not self.createdat:
+			self.createdat = now()
 
-	def before_save(self):
-		# Update fields once (before_insert already triggers before_save)
-		if self.status and self.status.lower() == "captured":
-				self.create_payment_entry()
-		self.lastupdatedat = now()		
+	def validate(self):
+		if self.merchant_payment_ref_id and frappe.db.exists(
+			"Rupifi Webhook Log",
+			{
+				"merchant_payment_ref_id": self.merchant_payment_ref_id,
+				"name": ["!=", self.name],
+			},
+		):
+			frappe.throw(
+				_("Rupifi Webhook Log already exists for merchant payment ref id {0}.").format(
+					self.merchant_payment_ref_id
+				)
+			)
+		if self.payment_id and frappe.db.exists(
+			"Rupifi Webhook Log",
+			{"payment_id": self.payment_id, "name": ["!=", self.name]},
+		):
+			frappe.throw(_("Rupifi Webhook Log already exists for payment id {0}.").format(self.payment_id))
+		self.lastupdatedat = now()
+
+	def _get_existing_payment_entry(self):
+		reference_numbers = [
+			ref for ref in {
+				(self.merchant_payment_ref_id or "").strip(),
+				(self.payment_id or "").strip(),
+			}
+			if ref
+		]
+		if not reference_numbers:
+			return None
+
+		return frappe.db.get_value(
+			"Payment Entry",
+			{
+				"reference_no": ["in", reference_numbers],
+				"docstatus": ["!=", 2],
+			},
+			"name",
+		)
 
 	
 	def create_payment_entry(self):
@@ -25,12 +61,9 @@ class RupifiWebhookLog(Document):
 		# --------------------------
 		# Idempotency check
 		# --------------------------
-		existing_pe = frappe.db.exists(
-			"Payment Entry",
-			{"reference_no": self.payment_id,"docstatus":1}
-		)
+		existing_pe = self._get_existing_payment_entry()
 		if existing_pe:
-			return  # Payment Entry already created
+			return existing_pe
 
 		# --------------------------
 		# Get Sales Order
@@ -81,3 +114,4 @@ class RupifiWebhookLog(Document):
 
 		pe.insert(ignore_permissions=True)
 		pe.submit()
+		return pe.name

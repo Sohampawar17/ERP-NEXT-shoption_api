@@ -5,9 +5,22 @@ import frappe
 from frappe.utils import now
 from frappe.utils import flt
 from frappe.model.document import Document
+from shoption_api.shoption_test_api.utr_validation import (
+	normalize_utr,
+	validate_unique_utr_number,
+)
 
 
 class DepositAmountPaymentApproal(Document):
+
+	def validate(self):
+		if self.utr__check_no:
+			self.utr__check_no = normalize_utr(self.utr__check_no)
+			validate_unique_utr_number(
+				self.utr__check_no,
+				current_doctype=self.doctype,
+				current_name=self.name,
+			)
 
 
 	def on_submit(self):
@@ -105,9 +118,6 @@ class DepositAmountPaymentApproal(Document):
 			)
    
 	def mandatory(self):
-		is_exists=frappe.get_all("Deposit Amount Payment Approal", filters={"utr__check_no": self.utr__check_no, "name": ["!=", self.name],"docstatus": 1})
-		if is_exists:
-			frappe.throw("UTR Number already exists for another approved Bank Transfer Request")
 		is_exists=frappe.get_all("Deposit Amount Payment Approal", filters={"bank_transaction_id": self.bank_transaction_id, "name": ["!=", self.name],"docstatus": 1})
 		if is_exists:
 			frappe.throw("Bank Transaction ID already exists for another approved Bank Transfer Request")

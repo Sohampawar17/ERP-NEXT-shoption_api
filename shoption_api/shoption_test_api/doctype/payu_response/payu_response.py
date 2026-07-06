@@ -2,29 +2,39 @@
 # For license information, please see license.txt
 
 import frappe
+from frappe import _
 from frappe.model.document import Document
-from frappe.utils import cint, flt, getdate
+from frappe.utils import cint, flt, getdate, now
 from erpnext.accounts.doctype.payment_entry.payment_entry import get_payment_entry
 
 class PayUResponse(Document):
-	def validate(self):
-		if frappe.db.exists("PayU Response", {"txnid": self.txnid}):
-			frappe.throw("A response with this Transaction ID and Status already exists.")
-			return
-	def before_insert(self):
-		if frappe.db.exists("PayU Response", {"txnid": self.txnid}):
-			frappe.throw("A response with this Transaction ID and Status already exists.")
-			return
-		if self.txnid and self.status and self.status.lower() in ["success", "failure"]:
-			if self.status.lower() == "failure":
-				frappe.db.set_value("Payment Link",{"transactionid":self.txnid}, "payment_link_status", 3) if self.txnid else None	
-			else:
-				frappe.db.set_value("Payment Link",{"transactionid":self.txnid}, "payment_link_status", 2) if self.txnid else None
-		if self.status and self.status.lower() == "success":
+	def after_insert(self):
+		if (self.status or "").lower() == "success":
 			self.create_payment_entry()
+
+	def validate(self):
+		if self.txnid and frappe.db.exists(
+			"PayU Response",
+			{"txnid": self.txnid, "name": ["!=", self.name]},
+		):
+			frappe.throw(_("PayU Response already exists for txnid {0}.").format(self.txnid))
+		if not self.createdat:
+			self.createdat = now()
+		self.lastupdated_at = now()
 
 
 	def create_payment_entry(self):
+		existing_pe = frappe.db.get_value(
+			"Payment Entry",
+			{
+				"reference_no": self.txnid,
+				"docstatus": ["!=", 2],
+			},
+			"name",
+		)
+		if existing_pe:
+			return existing_pe
+
 		# Get order_id linked to this transaction
 		order_id = None
 
@@ -73,3 +83,4 @@ class PayUResponse(Document):
 		pe.insert(ignore_permissions=True)
 		
 		pe.submit()
+		return pe.name

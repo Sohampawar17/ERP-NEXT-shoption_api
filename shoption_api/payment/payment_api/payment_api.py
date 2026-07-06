@@ -271,6 +271,17 @@ def payu_webhook_success():
 
 
 def create_payment_entry(txn):
+    existing_pe = frappe.db.get_value(
+        "Payment Entry",
+        {
+            "reference_no": txn.txnid,
+            "docstatus": ["!=", 2],
+        },
+        "name",
+    )
+    if existing_pe:
+        return existing_pe
+
     so = frappe.get_doc("Sales Order", txn.sales_order)
 
     pe = frappe.new_doc("Payment Entry")
@@ -288,6 +299,7 @@ def create_payment_entry(txn):
     })
     pe.insert(ignore_permissions=True)
     pe.submit()
+    return pe.name
 
 
 
@@ -499,29 +511,46 @@ def get_transaction_details():
     }
 import frappe
 from frappe.utils import now
+from shoption_api.shoption_test_api.doctype.payment_webhook_log.payment_webhook_log import (
+    upsert_payment_webhook_log,
+)
 
 @frappe.whitelist(allow_guest=True)
 def payu_response_webhook():
     """
     Save PayU webhook response into PayU Response DocType
     """
+    payu_response_name = None
+    txnid = ""
+    payment_status = None
+    raw_payload = None
+    data = {}
     try:
         # PayU sends form-urlencoded data
         data = frappe.form_dict.copy()
-        txnid = data.get("txnid")
-        status = data.get("status")  # success / failure
+        txnid = (data.get("txnid") or "").strip()
+        status = (data.get("status") or "").strip()
 
         if not txnid:
             frappe.throw("txnid missing")
 
         frappe.set_user("Administrator")
 
-        payment_status = "Success" if status == "Success" else "Failed"
-        if frappe.db.exists("PayU Response", {"txnid":txnid}):
-            frappe.throw("A response with this Transaction ID and Status already exists.")
+        payment_status = "Success" if status.lower() == "success" else "Failed"
+        raw_payload = frappe.as_json(data)
         # -----------------------------
-        # CREATE PAYU RESPONSE DOC
+        # Skip duplicate transaction completely
         # -----------------------------
+        payu_response_name = frappe.db.get_value("PayU Response", {"txnid": txnid}, "name")
+        if payu_response_name:
+            return {
+                "status": "duplicate",
+                "payment_status": payment_status,
+                "txnid": txnid,
+                "mihpayid": data.get("mihpayid"),
+                "message": "Duplicate transaction received. Existing PayU Response was not updated.",
+            }
+
         doc = frappe.new_doc("PayU Response")
 
         doc.mihpayid = data.get("mihpayid")
@@ -566,13 +595,32 @@ def payu_response_webhook():
         doc.cardtoken = data.get("card_token")
         doc.cardno = data.get("cardnum")
 
-        doc.createdat = now()
         doc.lastupdated_at = now()
 
-        # Store full payload
-        doc.raw_response = frappe.as_json(data)
-
         doc.insert(ignore_permissions=True)
+        payu_response_name = doc.name
+        payment_entry = frappe.db.get_value(
+            "Payment Entry",
+            {
+                "reference_no": txnid,
+                "docstatus": ["!=", 2],
+            },
+            "name",
+        )
+
+        upsert_payment_webhook_log(
+            provider="PayU",
+            transaction_reference=txnid,
+            external_payment_id=data.get("mihpayid"),
+            payload=raw_payload,
+            status=payment_status,
+            source_doctype="PayU Response",
+            source_name=payu_response_name,
+            processed=1,
+            processed_on=now(),
+            error_message=None,
+            payment_entry=payment_entry,
+        )
         frappe.db.commit()
 
         return {
@@ -585,6 +633,17 @@ def payu_response_webhook():
     except Exception:
         # Rollback any partial transaction
         frappe.db.rollback()
+        upsert_payment_webhook_log(
+            provider="PayU",
+            transaction_reference=txnid,
+            external_payment_id=data.get("mihpayid"),
+            payload=raw_payload,
+            status=payment_status,
+            source_doctype="PayU Response",
+            processed=0,
+            error_message=frappe.get_traceback(),
+        )
+        frappe.db.commit()
 
         # Log full traceback for debugging
         frappe.log_error(

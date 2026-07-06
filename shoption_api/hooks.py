@@ -166,6 +166,14 @@ app_license = "mit"
 # 	],
 # }
 
+scheduler_events = {
+    "cron": {
+        "0 * * * *": [
+            "shoption_api.tasks.check_duplicate_payment_references"
+        ]
+    }
+}
+
 # Testing
 # -------
 
@@ -310,6 +318,7 @@ doc_events = {
         "on_submit": "shoption_api.whatsapp_events.handle_shipment_delivered"
     },
     "Payment Entry": {
+        "validate": "shoption_api.shoption_test_api.doctype.payment_webhook_log.payment_webhook_log.validate_duplicate_payment_entry_reference",
         "on_submit":[ "shoption_api.public.payment_entry.update_sales_order_from_payment",
          "shoption_api.whatsapp_events.handle_payment_entry_whatsapp",
         ],

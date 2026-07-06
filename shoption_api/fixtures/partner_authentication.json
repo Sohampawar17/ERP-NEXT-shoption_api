@@ -3,6 +3,17 @@
   "docstatus": 0,
   "doctype": "Partner Authentication",
   "is_active": 1,
+  "modified": "2026-04-08 09:25:33.051424",
+  "name": "PART-Rupifi-0006",
+  "partner_id": "Rupifi",
+  "partner_name": "Rupifi",
+  "token": "U0hPUFRJT05SVVBJRklORFF3T0dabU5qTXRaREExWVMwME5EYzFMV0psWVRBdE5ESmpNemN3WmpNd09EWTM=",
+  "token_type": "Production"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Partner Authentication",
+  "is_active": 1,
   "modified": "2026-02-14 21:20:22.938220",
   "name": "PART-Rupifi-0005",
   "partner_id": "Rupifi",

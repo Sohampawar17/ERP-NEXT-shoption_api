@@ -6,7 +6,9 @@
  "engine": "InnoDB",
  "field_order": [
   "account_for_payment_entry",
-  "paid_to_account_currency"
+  "paid_to_account_currency",
+  "duplicate_alert_user_1",
+  "duplicate_alert_user_2"
  ],
  "fields": [
   {
@@ -21,6 +23,18 @@
    "fieldtype": "Link",
    "label": "paid_to_account_currency",
    "options": "Currency"
+  },
+  {
+   "fieldname": "duplicate_alert_user_1",
+   "fieldtype": "Link",
+   "label": "Duplicate Alert User 1",
+   "options": "User"
+  },
+  {
+   "fieldname": "duplicate_alert_user_2",
+   "fieldtype": "Link",
+   "label": "Duplicate Alert User 2",
+   "options": "User"
   }
  ],
  "grid_page_length": 50,

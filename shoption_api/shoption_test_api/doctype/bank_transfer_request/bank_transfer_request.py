@@ -4,6 +4,10 @@
 import frappe
 from frappe.model.document import Document
 from frappe.utils import cint, flt, getdate,nowdate, today,now
+from shoption_api.shoption_test_api.utr_validation import (
+	normalize_utr,
+	validate_unique_utr_number,
+)
 
 
 class BankTransferRequest(Document):
@@ -13,7 +17,12 @@ class BankTransferRequest(Document):
 		if not self.transaction_date:
 			self.transaction_date = today()
 		if self.utr_number:
-			self.utr_number = self.utr_number.strip()
+			self.utr_number = normalize_utr(self.utr_number)
+			validate_unique_utr_number(
+				self.utr_number,
+				current_doctype=self.doctype,
+				current_name=self.name,
+			)
 			is_exists = frappe.db.get_value(
 				"Sales Invoice",
 				{
@@ -299,9 +308,6 @@ class BankTransferRequest(Document):
 				je.cancel()
 
 	def mandatory(self):
-		is_exists=frappe.get_all("Bank Transfer Request", filters={"utr_number": self.utr_number, "name": ["!=", self.name],"status": "Approved","docstatus": 1})
-		if is_exists:
-			frappe.throw("UTR Number already exists for another approved Bank Transfer Request")
 		is_exists=frappe.get_all("Bank Transfer Request", filters={"bank_transaction_id": self.bank_transaction_id, "name": ["!=", self.name],"status": "Approved","docstatus": 1})
 		if is_exists and self.bank_transaction_id and self.transfer_type != "Credit Note":
 			frappe.throw("Bank Transaction ID already exists for another approved Bank Transfer Request")
